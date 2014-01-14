@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>CMU Raasta!</title>
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+        <link href="../css/styles.css" type="text/css" media="all" rel="stylesheet" />
+
+    <!-- Skitter Styles -->
+    <link href="../css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <!-- Skitter JS -->
+    <script type="text/javascript" language="javascript" src="../js/jquery-1.6.3.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/jquery.animate-colors-min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/jquery.skitter.min.js"></script>
+
+    <!-- Init Skitter -->
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function() {
+            $('.box_skitter_large').skitter({
+                theme: 'clean',
+                numbers_align: 'center',
+                progressbar: true, 
+                dots: true, 
+                preview: true
+            });
+        });
+    </script>
+    <style>
+                body{
+                    background:#333 url(../images/bg.fw.png) repeat top left;
+                    font-family:Arial;
+                }
+                span.reference{
+                    position:fixed;
+                    left:10px;
+                    bottom:10px;
+                    font-size:12px;
+                }
+                span.reference a{
+                    color:#aaa;
+                    text-transform:uppercase;
+                    text-decoration:none;
+                    text-shadow:1px 1px 1px #000;
+                    margin-right:30px;
+                }
+                span.reference a:hover{
+                    color:#ddd;
+                }
+                ul.sdt_menu{
+                    margin-top:150px;
+                }
+                h1.title{
+                    text-indent:-9000px;
+                    background:transparent url(title.png) no-repeat top left;
+                    width:633px;
+                height:69px;
+            }
+        </style>
+
+    
+    </head>
+    
+    
+    
+    
+
+
+        
+          
+        
+
+  
+<body>
+<div class="container">
+<style type="text/css">
+@font-face {
+    font-family: "Nav Font";
+    src: url(../fonts/SECRCODE.ttf) format("truetype");
+}
+p.customfont { 
+    font-family: "Nav Font", Verdana, Tahoma;
+}
+</style>
+
+<div class="content1">
+            
+            <ul id="sdt_menu" class="sdt_menu">
+                <li>
+                    <a href="../home/index.html">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Home</span>
+                            <span class="sdt_descr">We are CMU Raasta</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">About</span>
+                            <span class="sdt_descr">What We Do</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                            <a href="../about/aboutHistory.html">History</a>
+                            <a href="../about/aboutCostumes.html">Costumes</a>
+                            <a href="../about/aboutPerformances.html">Performances</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Donate</span>
+                            <span class="sdt_descr">Become a Sponsor Today!</span>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Gallery</span>
+                            <span class="sdt_descr">Meet the Team</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                            <a href="#">Current Members</a>
+                            <a href="#">Alumni</a>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link">Contact Us</span>
+                            <span class="sdt_descr">Have any Questions?</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                            <a href="#">Hire Us</a>
+                            <a href="#">Costumes</a>
+                            <a href="#">Anything Else!</a>
+                    </div>
+                </li>
+               
+            </ul>
+        </div>
+
+        
+       
+
+        <!-- The JavaScript -->
+        
+        
+        <script type="text/javascript">
+            $(function() {
+                /**
+                * for each menu element, on mouseenter, 
+                * we enlarge the image, and show both sdt_active span and 
+                * sdt_wrap span. If the element has a sub menu (sdt_box),
+                * then we slide it - if the element is the last one in the menu
+                * we slide it to the left, otherwise to the right
+                */
+                $('#sdt_menu > li').bind('mouseenter',function(){
+                    var $elem = $(this);
+                    $elem.find('img')
+                         .stop(true)
+                         .animate({
+                            'width':'228px',
+                            'height':'170px',
+                            'left':'0px'
+                         },400,'easeOutBack')
+                         .andSelf()
+                         .find('.sdt_wrap')
+                         .stop(true)
+                         .animate({'top':'140px'},500,'easeOutBack')
+                         .andSelf()
+                         .find('.sdt_active')
+                         .stop(true)
+                         .animate({'height':'170px'},300,function(){
+                        var $sub_menu = $elem.find('.sdt_box');
+                        if($sub_menu.length){
+                            var left = '170px';
+                            if($elem.parent().children().length == $elem.index()+1)
+                                left = '-170px';
+                            $sub_menu.show().animate({'left':left},200);
+                        }   
+                    });
+                }).bind('mouseleave',function(){
+                    var $elem = $(this);
+                    var $sub_menu = $elem.find('.sdt_box');
+                    if($sub_menu.length)
+                        $sub_menu.hide().css('left','0px');
+                    
+                    $elem.find('.sdt_active')
+                         .stop(true)
+                         .animate({'height':'0px'},300)
+                         .andSelf().find('img')
+                         .stop(true)
+                         .animate({
+                            'width':'0px',
+                            'height':'0px',
+                            'left':'85px'},400)
+                         .andSelf()
+                         .find('.sdt_wrap')
+                         .stop(true)
+                         .animate({'top':'10px'},500);
+                });
+            });
+        </script>
+
+
+
+
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+        </br>
+    <style>
+    .jumbotron {
+      margin-bottom: 0px;
+      height: 250px;
+
+      
+      text-shadow: black 0.3em 0.3em 0.3em;
+      background:url('../images/final_skyline.jpg') no-repeat center center;
+    }
+    </style>
+    <div class="jumbotron">
+        
+    </div>
+    </br>
+    </br>
+
+        <div class="row">
+        <div class="col-md-2">
+        </br>
+            <ul class="nav nav-pills nav-stacked span4 ">
+                    <li class="active"><a href="#">History</a></li>
+                    <li><a href="aboutCostumes.html">Costumes</a></li>
+                    <li><a href="aboutPerformances.html">Performances</a></li>
+            </ul>
+        </div>
+        <div class="col-md-10">
+        <h2><b>History</b></h2>
+                <p>CMU Raasta began with the vision of three people to bring a south asian cultural phenomenon to Carnegie Mellon University. 
+                Since 2011, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. 
+                By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujurati traditions through the West Indian folk dance Garba-Raas.
+                    </p><p>
+                Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
+                </p>
+                </br>
+        <h2><b>Dance Style</b></h2>
+        <p>
+                The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujurati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner. </p>
+<p>
+                Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p>
+
+               <p>  While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis </a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p>
+
+        </div>
+        </div>
+
+       <footer> <img src="../images/footer.png"; width="1580px"></footer>
+
+    </body>
+</html>
+

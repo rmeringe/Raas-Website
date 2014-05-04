@@ -28,10 +28,14 @@
                 preview: true
             });
         });
+
+        
     </script>
+   
+
     <style>
                 body{
-                    background:#333 url(../images/background.fw.png) repeat top left;
+                    background:#333 url(../images/background.fw.png) repeat bottom left;
                     font-family:Arial;
                     
                 }
@@ -67,7 +71,7 @@
     
     
     
-    
+   
 
 
         
@@ -75,9 +79,15 @@
         
 
   
-<body>
+<body >
 
-<div class="container">
+<style>
+    #left { float:left; display:block; margin-left:15px; margin-top:40px; padding:0; width:auto; height:auto; };
+    #right { float:left; display:block; margin:0; padding:0; width:14%; height:250px; background:#ccc; };
+
+</style>
+<div id="left"> <img src="../images/headLogo.fw.png"></div>
+<div class="container" style="margin-left:auto">
 <div id="headerBanner" style="margin-top:30px;">
 <img src="../images/banners/final_banner.jpg" alt=""/>
 </div>
@@ -254,6 +264,10 @@ p.customfont {
                 </div>
             </div>
         </div>
+        </div>
+
+        <div id="right" style="position:absolute; top:5px;right:10px; width:auto; height:auto;"><img src="../images/topper.fw.png"></div>
+        
         <br><br><br><br><br>
        <footer> <img src="../images/footer.fw.png"; width="1590px"></footer>
 

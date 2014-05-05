@@ -20,6 +20,7 @@
     <!-- Init Skitter -->
     <script type="text/javascript" language="javascript">
         $(document).ready(function() {
+            $('.box_skitter_large').css({width:'100%'});
             $('.box_skitter_large').skitter({
                 theme: 'clean',
                 numbers_align: 'center',
@@ -79,17 +80,17 @@
         
 
   
-<body style="position:relative;min-width:1550px;" >
+<body >
 
 <style>
-    #left { float:left; display:block; margin-left:15px; margin-top:40px; padding:0; width:auto; height:auto; };
+    #left {  float:left; display:block; margin-left:15px; margin-top:40px; margin-right:20px; padding:0; width:10%;  height:auto; };
     #right { float:right; display:inline-block; margin-left:200px; padding:0; width:14%; height:250px; background:#ccc; };
 
 </style>
-<div id="left"> <img src="../images/headLogo.fw.png"></div>
-<div class="container" style="margin-left:auto;margin-right:auto; ">
-<div id="headerBanner" style="margin-top:30px;">
-<img src="../images/banners/final_banner.jpg" alt=""/>
+<div id="left"> <img src="../images/headLogo.fw.png" width="100%"></div>
+<div class="container" style="margin-left:auto;margin-right:auto;">
+<div id="headerBanner" style="margin-top:30px; ">
+<img src="../images/banners/final_banner.jpg" width="100%" alt=""/>
 </div>
 
 <style type="text/css">
@@ -102,7 +103,7 @@ p.customfont {
 }
 </style>
 
-<div class="content1">
+<div class="content1" >
             
             <ul id="sdt_menu" class="sdt_menu">
                 <li>
@@ -190,7 +191,7 @@ p.customfont {
                     $elem.find('img')
                          .stop(true)
                          .animate({
-                            'width':'228px',
+                            'width':.2 * this.parentNode.offsetWidth,
                             'height':'170px',
                             'left':'0px'
                          },500,'easeOutBack')
@@ -243,14 +244,14 @@ p.customfont {
         </br>
         </br>
  
-    
 
 
-        <div id="content">
-            <div class="border_box">
-                <div class="box_skitter box_skitter_large">
+
+        <div id="content" style="width:auto">
+            <div class="border_box" style="width:100%">
+                <div class="box_skitter box_skitter_large" style="width:100%">
                     <ul>
-                        <li><a href="#cube"><img src="../images/banners/Main-Banner_5.jpg" class="cube" /></a><div class="label_text"></div></li>
+                        <li><a href="#cube"><img id="img1" src="../images/banners/Main-Banner_5.jpg"  class="cube" /></a><div class="label_text"></div></li>
 
                        <li><a href="#cube"><img src="../images/banners/Main-Banner_2.jpg" class="cube" /></a><div class="label_text"></div></li>
                         
@@ -265,11 +266,12 @@ p.customfont {
             </div>
         </div>
         </div>
+        
 
         <div id="right" style="position:absolute; top:5px;right:10px; width:auto; height:auto;"><img src="../images/topper.fw.png"></div>
         
         <br><br><br><br><br>
-       <footer> <img src="../images/footer.fw.png"; width="1590px"></footer>
+       <footer> <img src="../images/footer.fw.png"; width="1200px" height="50px"></footer>
 
     </body>
 </html>

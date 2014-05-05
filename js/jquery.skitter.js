@@ -250,6 +250,8 @@
 			}
 			
 			this.settings.width_skitter 	= parseFloat(this.box_skitter.css('width'));
+
+			console.log(this.settings.width_skitter);
 			this.settings.height_skitter 	= parseFloat(this.box_skitter.css('height'));
 			
 			if (!this.settings.width_skitter || !this.settings.height_skitter) {
@@ -908,7 +910,7 @@
 		animationCube: function (options)
 		{
 			var self = this;
-			
+			console.log(hey);
 			var options = $.extend({}, {random: false}, options || {});
 			
 			this.settings.is_animating = true;
@@ -917,7 +919,8 @@
 			
 			this.setActualLevel();
 			
-			var division_w 	= Math.ceil(this.settings.width_skitter / (this.settings.width_skitter / 8));
+			//var division_w 	= Math.ceil(this.settings.width_skitter / (this.settings.width_skitter / 8));
+
 			var division_h 	= Math.ceil(this.settings.height_skitter / (this.settings.height_skitter / 3));
 			var total		= division_w * division_h;
 			

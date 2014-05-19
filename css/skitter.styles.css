@@ -2,7 +2,7 @@
 ----------------------------------------------- */
 .box_skitter {
 	position: relative;
-	width: 800px;
+	width: 400px;
 	height: 300px;
 	background: #000;
 }
@@ -385,7 +385,7 @@
 /* =Example for dimenions
 -------------------------------------------------------------- */
 .box_skitter_large {
-	width: 1140px;
+	width: 800px;
 	height: 351px;
 }
 

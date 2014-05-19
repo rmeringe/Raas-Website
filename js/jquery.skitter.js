@@ -16,6 +16,7 @@
 		skitters = [];
 	
 	$.fn.skitter = function(options) {
+
 		return this.each(function() {
 			if ( $(this).data('skitter_number') == undefined ) {
 				$(this).data('skitter_number', number_skitter);
@@ -242,6 +243,7 @@
 			// Fullscreen
 			if (this.settings.fullscreen) {
 				var width = $(window).width();
+
 				var height = $(window).height();
 				this.box_skitter.width(width).height(height);
 				this.box_skitter.css({'position':'absolute', 'top':0, 'left':0, 'z-index':1000});
@@ -250,9 +252,8 @@
 			}
 			
 			this.settings.width_skitter 	= parseFloat(this.box_skitter.css('width'));
-
-			console.log(this.settings.width_skitter);
 			this.settings.height_skitter 	= parseFloat(this.box_skitter.css('height'));
+
 			
 			if (!this.settings.width_skitter || !this.settings.height_skitter) {
 				console.warn('Width or height size is null! - Skitter Slideshow');
@@ -279,10 +280,12 @@
 			this.box_skitter.find('.next_button').hide();
 						
 			this.box_skitter.find('.container_skitter').width(this.settings.width_skitter);
+
 			this.box_skitter.find('.container_skitter').height(this.settings.height_skitter);
 			
 			var width_label = this.settings.width_label ? this.settings.width_label : this.settings.width_skitter;
 			this.box_skitter.find('.label_skitter').width(width_label);
+
 			
 			var initial_select_class = ' image_number_select', u = 0;
 			this.settings.images_links = new Array();
@@ -386,6 +389,7 @@
 				info_slide_thumb.width(width_image+'px');
 				w_info_slide_thumb = info_slide_thumb.width();
 				width_value = this.settings.width_skitter;
+				
 				
 				width_value = width_skitter - 100;
 				
@@ -610,6 +614,7 @@
 			var loading = $('<div class="loading">Loading</div>');
 			this.box_skitter.append(loading);
 			var total = this.settings.images_links.length;
+
 			
 			var u = 0;
 			$.each(this.settings.images_links, function(i)
@@ -618,20 +623,25 @@
 				var loading = $('<span class="image_loading"></span>');
 				loading.css({position:'absolute', top:'-9999em'});
 				self.box_skitter.append(loading);
-				var img = new Image();
+				var img = new Image(400,400);
+				
 				
 				$(img).load(function () {
+					
 					++u;
+
 					if (u == total) {
 						self.box_skitter.find('.loading').remove();
 						self.box_skitter.find('.image_loading').remove();
 						self.start();
 					}
+					
 				}).error(function () {
 					self.box_skitter.find('.loading, .image_loading, .image_number, .next_button, .prev_button').remove();
 					self.box_skitter.html('<p style="color:white;background:black;">Error loading images. One or more images were not found.</p>');
 				}).attr('src', self_il[0]);
 			});
+
 		}, 
 		
 		/**
@@ -641,6 +651,7 @@
 		{
 			var self = this;
 			var init_pause = false;
+
 
 			if (this.settings.numbers || this.settings.thumbs) this.box_skitter.find('.info_slide').fadeIn(500);
 			if (this.settings.dots) this.box_skitter.find('.info_slide_dots').fadeIn(500);
@@ -659,8 +670,10 @@
 			
 			self.box_skitter.find('.image a img').attr({'src': self.settings.image_atual});
 			img_link = self.box_skitter.find('.image a');
-			img_link = self.resizeImage(img_link);
+			
+			//img_link = self.resizeImage(img_link);
 			img_link.find('img').fadeIn(1500);
+			
 			
 			self.setValueBoxText();
 			self.showBoxText();
@@ -691,6 +704,7 @@
 			}
 			
 			if ($.isFunction(self.settings.onLoad)) self.settings.onLoad(self);
+
 		},
 		
 		/**
@@ -698,6 +712,7 @@
 		 */
 		jumpToImage: function(imageNumber) 
 		{
+
 			if (this.settings.is_animating == false) {
 				this.settings.elapsedTime = 0;
 				this.box_skitter.find('.box_clone').stop();
@@ -910,7 +925,7 @@
 		animationCube: function (options)
 		{
 			var self = this;
-			console.log(hey);
+			
 			var options = $.extend({}, {random: false}, options || {});
 			
 			this.settings.is_animating = true;
@@ -919,13 +934,12 @@
 			
 			this.setActualLevel();
 			
-			//var division_w 	= Math.ceil(this.settings.width_skitter / (this.settings.width_skitter / 8));
-
+			var division_w 	= Math.ceil(this.settings.width_skitter / (this.settings.width_skitter / 8));
 			var division_h 	= Math.ceil(this.settings.height_skitter / (this.settings.height_skitter / 3));
 			var total		= division_w * division_h;
 			
 			var width_box 	= Math.ceil(this.settings.width_skitter / division_w);
-			var height_box 	= Math.ceil(this.settings.height_skitter / division_h);
+			var height_box 	= Math.ceil(this.settings.height_skitter/division_h);
 			
 			var init_top 	= this.settings.height_skitter + 200;
 			var init_left 	= this.settings.height_skitter + 200;

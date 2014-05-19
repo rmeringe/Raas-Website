@@ -8,18 +8,23 @@
 
     <!-- Skitter Styles -->
     <link href="../css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
-    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <script src="../js/bootstrap.js"></script>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
-    <!-- Skitter JS -->
-    <script type="text/javascript" language="javascript" src="../js/jquery-1.6.3.min.js"></script>
+   
     <script type="text/javascript" language="javascript" src="../js/jquery.easing.1.3.js"></script>
+    <link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.js"></script> <!-- 16 KB -->
+    <!-- Skitter JS 
+    
     <script type="text/javascript" language="javascript" src="../js/jquery.animate-colors-min.js"></script>
-    <script type="text/javascript" language="javascript" src="../js/jquery.skitter.min.js"></script>
+    <script type="text/javascript" language="javascript" src="../js/jquery.skitter.js"></script>
 
-    <!-- Init Skitter -->
+    <!-- Init Skitter 
     <script type="text/javascript" language="javascript">
         $(document).ready(function() {
+
             $('.box_skitter_large').css({width:'100%'});
             $('.box_skitter_large').skitter({
                 theme: 'clean',
@@ -31,7 +36,7 @@
         });
 
         
-    </script>
+    </script>-->
    
 
     <style>
@@ -83,8 +88,8 @@
 <body >
 
 <style>
-    #left {  float:left; display:block; margin-left:15px; margin-top:40px; margin-right:20px; padding:0; width:10%;  height:auto; };
-    #right { float:right; display:inline-block; margin-left:200px; padding:0; width:14%; height:250px; background:#ccc; };
+    #left {  float:left; display:block; margin-left:15px; margin-top:40px; margin-right:20px; padding:0; width:0px;  height:auto; };
+    #right { float:right; display:inline-block; margin-left:200px; padding:0; width:2px; height:250px; background:#ccc; };
 
 </style>
 <div id="left"> <img src="../images/headLogo.fw.png" width="100%"></div>
@@ -94,6 +99,36 @@
 </div>
 
 <style type="text/css">
+
+
+
+@media (min-width: 930px) {
+  #left {
+    width: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  #left{
+    width: 70px;
+  }
+}
+@media (min-width: 1100px) {
+  #left{
+    width: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  #left{
+    width: 90px;
+  }
+}
+
+@media (min-width: 1300px) {
+  #left {
+    width: 110px;
+  }
+}
 @font-face {
     font-family: "Nav Font";
     src: url(../fonts/SECRCODE.ttf) format("truetype");
@@ -162,9 +197,9 @@ p.customfont {
                         </span>
                     </a>
                     <div class="sdt_box">
-                            <a href="../contact/contact.html">Hire Us</a>
-                            <a href="../contact/contact.html">Costume Rental</a>
-                            <a href="../contact/contact.html">Questions/Comments?</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Hire Us</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_2_name">Costume Rental</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Questions/Comments?</a>
                     </div>
                 </li>
                
@@ -179,6 +214,7 @@ p.customfont {
         
         <script type="text/javascript">
             $(function() {
+
                 /**
                 * for each menu element, on mouseenter, 
                 * we enlarge the image, and show both sdt_active span and 
@@ -192,23 +228,23 @@ p.customfont {
                          .stop(true)
                          .animate({
                             'width':.2 * this.parentNode.offsetWidth,
-                            'height':'170px',
+                            'height':.15 * this.parentNode.offsetWidth,
                             'left':'0px'
                          },500,'easeOutBack')
                          .andSelf()
                          .find('.sdt_wrap')
                          .stop(true)
-                         .animate({'top':'140px'},500,'easeOutBack')
+                         .animate({'top':.15*this.parentNode.offsetWidth},500,'easeOutBack')
                          .andSelf()
                          .find('.sdt_active')
                          .stop(true)
-                         .animate({'height':'170px'},300,function(){
+                         .animate({'height':.17*this.parentNode.offsetWidth,'width':.2 * this.parentNode.offsetWidth},300,function(){
                         var $sub_menu = $elem.find('.sdt_box');
                         if($sub_menu.length){
-                            var left = '170px';
+                            var left = .6* this.parentNode.offsetWidth;
                             if($elem.parent().children().length == $elem.index()+1)
-                                left = '-170px';
-                            $sub_menu.show().animate({'left':left},200);
+                                left = -1*.75*this.parentNode.offsetWidth;
+                            $sub_menu.show().animate({'left':left,'top': .4*this.parentNode.offsetWidth,'height':.8*this.parentNode.offsetWidth,'width':.8*this.parentNode.offsetWidth},200);
                         }   
                     });
                 }).bind('mouseleave',function(){
@@ -244,14 +280,22 @@ p.customfont {
         </br>
         </br>
  
+        <div class="fotorama" data-transition="dissolve" data-autoplay="3000" data-allowfullscreen="true">
+        <img src="../images/banners/Main-Banner_5.jpg">
+        <img src="../images/banners/Main-Banner_2.jpg">
+        <img src="../images/banners/Main-Banner_4.jpg">
+        <img src="../images/banners/Main-Banner_3.jpg">
+        <img src="../images/banners/Main-Banner_1.jpg">
+        </div>
+        </div>
 
 
-
+<!--
         <div id="content" style="width:auto">
             <div class="border_box" style="width:100%">
                 <div class="box_skitter box_skitter_large" style="width:100%">
                     <ul>
-                        <li><a href="#cube"><img id="img1" src="../images/banners/Main-Banner_5.jpg"  class="cube" /></a><div class="label_text"></div></li>
+                        <li style="width:100%"><a href="#cube"><img id="img1" src="../images/banners/Main-Banner_5.jpg"  class="cube" width="400px"/></a><div class="label_text"></div></li>
 
                        <li><a href="#cube"><img src="../images/banners/Main-Banner_2.jpg" class="cube" /></a><div class="label_text"></div></li>
                         
@@ -266,9 +310,45 @@ p.customfont {
             </div>
         </div>
         </div>
+        -->
         
 
-        <div id="right" style="position:absolute; top:5px;right:10px; width:auto; height:auto;"><img src="../images/topper.fw.png"></div>
+        <div id="right" style="position:absolute; float:right; top:5px; width:auto; "><img src="../images/topper.fw.png" height="100%" ></div>
+        <style>
+         @media (min-width: 0px) {
+        #right{
+             height: 0px;
+             right: 15px;
+            }
+        }
+
+        @media (min-width: 930px) {
+        #right{
+             height: 15px;
+             right: 15px;
+            }
+        }
+
+         @media (min-width: 1000px) {
+        #right{
+             height: 20px;
+             right: 15px;
+            }
+        }
+         @media (min-width: 1200px) {
+        #right{
+             height: 25px;
+             right:15px
+            }
+        }
+ 
+         @media (min-width: 1550px) {
+        #right{
+             height: 30px;
+             right:15px
+            }
+        }
+        </style>
         
         <br><br><br><br><br>
        <footer> <img src="../images/footer.fw.png"; width="1200px" height="50px"></footer>

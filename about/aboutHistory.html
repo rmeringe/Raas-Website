@@ -6,6 +6,7 @@
         <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
         <link href="../css/styles.css" type="text/css" media="all" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 
     <!-- Skitter Styles -->
     <link href="../css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
@@ -78,17 +79,47 @@
   
 <body>
 <style>
-    #left { float:left; display:block; margin-left:15px; margin-top:40px; padding:0; width:10%; height:auto; };
-    #right { float:left; display:block; margin:0; padding:0; width:14%; height:250px; background:#ccc; };
+    #left {  float:left; display:block; margin-left:15px; margin-top:40px; margin-right:20px; padding:0; width:0px;  height:auto; };
+    #right { float:right; display:inline-block; margin-left:200px; padding:0; width:2px; height:250px; background:#ccc; };
 
 </style>
 <div id="left"> <img src="../images/headLogo.fw.png" width="100%"></div>
-<div class="container">
-<div id="headerBanner" style="margin-top:30px;">
+<div class="container" style="margin-left:auto;margin-right:auto;">
+<div id="headerBanner" style="margin-top:30px; ">
 <img src="../images/banners/final_banner.jpg" width="100%" alt=""/>
 </div>
 
 <style type="text/css">
+
+
+
+@media (min-width: 930px) {
+  #left {
+    width: 60px;
+  }
+}
+
+@media (min-width: 992px) {
+  #left{
+    width: 70px;
+  }
+}
+@media (min-width: 1100px) {
+  #left{
+    width: 80px;
+  }
+}
+@media (min-width: 1200px) {
+  #left{
+    width: 90px;
+  }
+}
+
+@media (min-width: 1300px) {
+  #left {
+    width: 110px;
+  }
+}
 @font-face {
     p{
         font-family: 'Arvo', serif;
@@ -154,9 +185,9 @@
                         </span>
                     </a>
                     <div class="sdt_box">
-                            <a href="../contact/contact.html">Hire Us</a>
-                            <a href="../contact/contact.html">Costume Rental</a>
-                            <a href="../contact/contact.html">Questions/Comments?</a>
+                           <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Hire Us</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_2_name">Costume Rental</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Questions/Comments?</a>
                     </div>
                 </li>
                
@@ -166,11 +197,12 @@
         
        
 
-        <!-- The JavaScript -->
+  <!-- The JavaScript -->
         
         
         <script type="text/javascript">
             $(function() {
+
                 /**
                 * for each menu element, on mouseenter, 
                 * we enlarge the image, and show both sdt_active span and 
@@ -183,24 +215,24 @@
                     $elem.find('img')
                          .stop(true)
                          .animate({
-                            'width':'228px',
-                            'height':'170px',
+                            'width':.2 * this.parentNode.offsetWidth,
+                            'height':.15 * this.parentNode.offsetWidth,
                             'left':'0px'
-                         },400,'easeOutBack')
+                         },500,'easeOutBack')
                          .andSelf()
                          .find('.sdt_wrap')
                          .stop(true)
-                         .animate({'top':'140px'},500,'easeOutBack')
+                         .animate({'top':.15*this.parentNode.offsetWidth},500,'easeOutBack')
                          .andSelf()
                          .find('.sdt_active')
                          .stop(true)
-                         .animate({'height':'170px'},300,function(){
+                         .animate({'height':.17*this.parentNode.offsetWidth,'width':.2 * this.parentNode.offsetWidth},300,function(){
                         var $sub_menu = $elem.find('.sdt_box');
                         if($sub_menu.length){
-                            var left = '170px';
+                            var left = .6* this.parentNode.offsetWidth;
                             if($elem.parent().children().length == $elem.index()+1)
-                                left = '-170px';
-                            $sub_menu.show().animate({'left':left},200);
+                                left = -1*.75*this.parentNode.offsetWidth;
+                            $sub_menu.show().animate({'left':left,'top': .4*this.parentNode.offsetWidth,'height':.8*this.parentNode.offsetWidth,'width':.8*this.parentNode.offsetWidth},200);
                         }   
                     });
                 }).bind('mouseleave',function(){
@@ -242,7 +274,7 @@
 
       
       text-shadow: black 0.3em 0.3em 0.3em;
-      background:url('../images/final_skyline.jpg') no-repeat center center;
+      background:url('../images/Final_Skyline.jpg') no-repeat center center;
     }
     .textBack{
         background-color:rgba(0,0,0,.5);
@@ -259,9 +291,9 @@
         
         <h2 style=" margin-left: 20px; font-family:Arvo"><b>History</b></h2>
         </br>
-                <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
+                <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
 
-                    </p> <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                    </p> <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
                 </p>
                 </br></br>
@@ -272,14 +304,14 @@
         <div style="margin-left:auto; margin-right:5%">
         <img src="../images/raasGarba.fw.png" style="width: 100%; float: left; margin-bottom: 30px; margin-right: auto; margin-left:auto"></div><br><br><br>
         
-         <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p>
-                 <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                 <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner. </p>
-         <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+         <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans"> &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
                 Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p>
 
-                <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Arvo">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p>
+                <p style=" margin-left: 25px; margin-right:25px;font-size:17px;font-family:Open Sans">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p>
 
           <br>
         
@@ -292,7 +324,42 @@
         <br>
         <br>
         <br>
-        <div id="right" style="position:absolute; top:5px;right:10px; width:auto; height:auto;"><img src="../images/topper.fw.png"></div>
+        <div id="right" style="position:absolute; float:right; top:5px; width:auto; "><img src="../images/topper.fw.png" height="100%" ></div>
+        <style>
+         @media (min-width: 0px) {
+        #right{
+             height: 0px;
+             right: 15px;
+            }
+        }
+
+        @media (min-width: 930px) {
+        #right{
+             height: 15px;
+             right: 15px;
+            }
+        }
+
+         @media (min-width: 1000px) {
+        #right{
+             height: 20px;
+             right: 15px;
+            }
+        }
+         @media (min-width: 1200px) {
+        #right{
+             height: 25px;
+             right:15px
+            }
+        }
+ 
+         @media (min-width: 1550px) {
+        #right{
+             height: 30px;
+             right:15px
+            }
+        }
+        </style>
 
        <footer> <img src="../images/footer.fw.png"; width="1500px"></footer>
 

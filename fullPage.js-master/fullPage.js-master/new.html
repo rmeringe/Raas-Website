@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
+	<title>FullScreen Backgrounds - fullPage.js</title>
+	<meta name="author" content="Alvaro Trigo Lopez" />
+	<meta name="description" content="fullPage fixed header and footer." />
+	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+	<link href="../css/jquery.galereya.css" rel="stylesheet"/>
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	<link rel="stylesheet" type="text/css" href="examples.css" />
+	<link href="../css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
+	<link href="../css/style.css" type="text/css" media="all" rel="stylesheet" />
+	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
+	<link href="../fonts/font.css" rel="stylesheet">
+
+	<!--fonts !-->
+	<style>
+	@font-face {
+	font-family: '33535gillsansmt';
+	src: url('../fonts/33535gillsansmt.eot');
+	src: local('../fonts/33535gillsansmt'), url('../fonts/33535gillsansmt.woff') format('woff'), url('../fonts/33535gillsansmt.ttf') format('truetype');
+	}
+	</style>
+	
+	<style>
+	
+	/* Style for our header texts 
+	* --------------------------------------- */
+	h1{
+		font-size: 60px;	
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	.intro h1{
+		color: #fff;
+	}
+	h2{
+		font-size: 40px;	
+		font-family: arial,helvetica;
+		color: #fff;
+		margin:0;
+		padding:0;
+	}
+	}
+	.intro p{
+		color: #fff;
+		padding:40px 0 0 0;
+		font-size: 3em;
+	}
+	
+	/* Centered texts in each section 
+	* --------------------------------------- */
+	.section{
+		text-align:center;
+	}
+
+	/* Fixed header and footer.
+	* --------------------------------------- */
+	#header, #footer{
+		position:fixed;
+		
+		display:block;
+		width: 100%;
+		background:linear-gradient(
+							      rgba(102, 0, 0, 0),
+							      rgba(102, 0, 0, 0)
+							    ),url(../images/binding_dark.png);
+		
+		z-index:9;
+		text-align:center;
+		color: #f2f2f2;
+		padding: 10px 0 0 0;
+	}
+	
+
+	#footer{
+		height:30px;
+		bottom:0px;
+		
+	}
+	
+	
+	/* Bottom menu
+	* --------------------------------------- */
+	#infoMenu {
+		bottom: 80px;
+	}
+	#infoMenu li a {
+		color: #fff;
+		z-index: 999;
+	}
+	
+    #left {  float:left; display:block;  margin-left:20px; margin-right:20px; padding:0; width:200px;  height:auto;  };
+    #middle{   display:inline-block;  float:left; margin-left:20px; padding-left:20px; width:50%;  height:50px; overflow:hidden;};
+    #right { float:right; display:inline-block; margin-left:200px; padding:0; width:2px; height:250px; background:#ccc; };
+
+
+	</style>
+
+	<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+	
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
+
+	<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+
+
+
+	<script type="text/javascript" src="../js/jquery.galereya.min.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	<script type="text/javascript" src="examples.js"></script>
+
+    <script src="../js/bootstrap.js"></script>
+   
+    <script type="text/javascript" language="javascript" src="../js/jquery.easing.1.3.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.js"></script> <!-- 16 KB -->
+    
+
+    <script type="text/javascript">
+            $(function() {
+				/**
+				* for each menu element, on mouseenter, 
+				* we enlarge the image, and show both sdt_active span and 
+				* sdt_wrap span. If the element has a sub menu (sdt_box),
+				* then we slide it - if the element is the last one in the menu
+				* we slide it to the left, otherwise to the right
+				*/
+                $('#sdt_menu > li').bind('mouseenter',function(){
+					var $elem = $(this);
+					$elem.find('img')
+						 .stop(true)
+						 .animate({
+							'width':'170px',
+							'height':'170px',
+							'left':'0px'
+						 },400,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_wrap')
+					     .stop(true)
+						 .animate({'top':'140px'},500,'easeOutBack')
+						 .andSelf()
+						 .find('.sdt_active')
+					     .stop(true)
+						 .animate({'height':'170px'},300,function(){
+						var $sub_menu = $elem.find('.sdt_box');
+						if($sub_menu.length){
+							var left = '170px';
+							if($elem.parent().children().length == $elem.index()+1)
+								left = '-170px';
+							$sub_menu.show().animate({'left':left},200);
+						}	
+					});
+				}).bind('mouseleave',function(){
+					var $elem = $(this);
+					var $sub_menu = $elem.find('.sdt_box');
+					if($sub_menu.length)
+						$sub_menu.hide().css('left','0px');
+					
+					$elem.find('.sdt_active')
+						 .stop(true)
+						 .animate({'height':'0px'},300)
+						 .andSelf().find('img')
+						 .stop(true)
+						 .animate({
+							'width':'0px',
+							'height':'0px',
+							'left':'85px'},400)
+						 .andSelf()
+						 .find('.sdt_wrap')
+						 .stop(true)
+						 .animate({'top':'25px'},500);
+				});
+            });
+        </script>
+	
+	<script>
+    $(function() {
+        $('#galleryherepls').galereya();
+    });
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['firstPage', 'secondPage', '3rdPage','4thPage','5thPage'],
+				//slidesColor: ['#6495ED', "#008080", "rgb(27,188,155)","rgb(198,61,15)"],
+				'scrollOverflow': true,
+				css3: true,
+				navigation:true,
+				navigationPosition: 'right',
+				navigationTooltips: ['Home', 'About', 'Gallery','Sponsor', 'Contact']		
+			});
+		});
+	</script>
+	<!--#333 url(../images/background.jpg) repeat top;-->
+	<style>
+	
+	                body{
+	                    background:rgba(147, 112, 219, 1);
+	                    font-family:Arial;
+	                    
+	                }
+	                span.reference{
+	                    position:fixed;
+	                    left:10px;
+	                    bottom:10px;
+	                    font-size:12px;
+	                }
+	                span.reference a{
+	                    color:#aaa;
+	                    text-transform:uppercase;
+	                    text-decoration:none;
+	                    text-shadow:1px 1px 1px #000;
+	                    margin-right:30px;
+	                }
+	                span.reference a:hover{
+	                    color:#ddd;
+	                }
+	                ul.sdt_menu{
+	                    margin-top:70px;
+	                    margin-left:200px;
+	                }
+	                h1.title{
+	                    text-indent:-9000px;
+	                    background:transparent url(title.png) no-repeat top left;
+	                    width:633px;
+	                height:69px;
+	            }
+	               a, a:hover, a:active, a:visited { color: white; }
+	           
+#section0{
+		background: -webkit-gradient(linear, top left, bottom left, from(#7baabe), to(#969ac6));
+		background: -webkit-linear-gradient(#7BAABE, #969AC6);
+		background: linear-gradient(rgba(100, 149, 237, 1),
+							     rgba(147, 112, 219, 1));
+	}
+	#section1{
+		background: -webkit-gradient(linear, top left, bottom left, from(#92a1ca), to(#76c2bd));
+		background: -webkit-linear-gradient(#92a1ca, #76c2bd);
+		background: linear-gradient(rgba(147, 112, 219, 1),#76c2bd);
+	}
+		
+	        </style>
+	        <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div id="header">
+	<div id='cssmenu'>
+	<ul>
+	   <li class='active'><a href='index.html'><span>Home</span></a></li>
+
+	   <li class='has-sub'><a href='#'><span>About</span></a>
+	      <ul>
+	         <li class='has-sub'><a href='#'><span>Team History</span></a>
+	
+	         </li>
+	         <li class='has-sub'><a href='#'><span>Dance Style</span></a>
+	   
+	         </li>
+	      </ul>
+	   </li>
+	   <li><a href='#'><span>Our Team</span></a></li>
+	   <li><a href='#'><span>Gallery</span></a></li>
+	   <li><a href='#'><span>Donate</span></a></li>
+	   <li class='last'><a href='#'><span>Contact</span></a></li>
+	</ul>
+	</div>
+	<hr style="bottom:0px;width:100%;height:5px;background-color:#F62217;z-index:99999">
+
+</div>
+
+<script>
+	$('#cssmenu').prepend('<div id="indicatorContainer"><div id="pIndicator"><div id="cIndicator"></div></div></div>');
+    var activeElement = $('#cssmenu>ul>li:first');
+
+    $('#cssmenu>ul>li').each(function() {
+        if ($(this).hasClass('active')) {
+            activeElement = $(this);
+        }
+    });
+
+
+	var posLeft = activeElement.position().left;
+	var elementWidth = activeElement.width();
+	posLeft = posLeft + elementWidth/2 -6;
+	if (activeElement.hasClass('has-sub')) {
+		posLeft -= 6;
+	}
+
+	$('#cssmenu #pIndicator').css('left', posLeft);
+	var element, leftPos, indicator = $('#cssmenu pIndicator');
+	
+	$("#cssmenu>ul>li").hover(function() {
+        element = $(this);
+        var w = element.width();
+        if ($(this).hasClass('has-sub'))
+        {
+        	leftPos = element.position().left + w/2 - 12;
+        }
+        else {
+        	leftPos = element.position().left + w/2 - 6;
+        }
+
+        $('#cssmenu #pIndicator').css('left', leftPos);
+    }
+    , function() {
+    	$('#cssmenu #pIndicator').css('left', posLeft);
+    });
+
+	$('#cssmenu>ul').prepend('<li id="menu-button"><a>Menu</a></li>');
+	$( "#menu-button" ).click(function(){
+    		if ($(this).parent().hasClass('open')) {
+    			$(this).parent().removeClass('open');
+    		}
+    		else {
+    			$(this).parent().addClass('open');
+    		}
+    	});
+</script>
+<!--
+<div id="header">
+	<div id="left"> <img src="../images/headLogo.fw.png" width="auto"></div>
+	<div id="middle">
+		<h1 style="text-align:left;font-family:Abril Flatface;font-weight:lighter;"> </h1>
+			<div class="content" >
+			
+			<ul id="sdt_menu" xml:id="menu" class="sdt_menu">
+				<li>
+					<a href="#">
+						
+						<span class="sdt_active"></span>
+						<span class="sdt_wrap">
+                            <span class="sdt_link"><center>Home</center></span>
+                        </span>
+					</a>
+				</li>
+				<li>
+                    <a href="../about/aboutHistory.html">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link" >About </span>
+                        </span>
+                    </a>
+
+                </li>
+				<li>
+					<a href="../gallery/gallery.html">
+                       
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link" >Our Team</span>
+                        </span>
+                    </a>
+				</li>
+				<li>
+                    <a href="../donate/donateUs.html">
+                       
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link" >Gallery</span>
+                        </span>
+                    </a>
+                </li>
+				<li>
+                    <a href="../donate/donateUs.html">
+                       
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link" >Donate</span>
+                        </span>
+                    </a>
+                </li>
+				<li>
+                    <a href="../contact/contact.html">
+                        
+                        <span class="sdt_active"></span>
+                        <span class="sdt_wrap">
+                            <span class="sdt_link" >Contact</span>
+                        </span>
+                    </a>
+                    <div class="sdt_box">
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Hire Us</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_2_name">Costume Rental</a>
+                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_3_name">Questions?</a>
+                    </div>
+                </li>
+			</ul>
+		</div>
+  	</div>
+
+
+
+    <div id="right" style="position:absolute; float:left; top:5px; width:auto;right:10px; "><img src="../images/topper.fw.png" height="100%" ></div>
+    
+       
+
+</div>
+ -->
+
+<div id="footer"><img src="../images/footer.fw.png"; width:"auto" height="100%" bottom="0px"></div>
+
+<div id="fullpage">
+	<div class="section " id="section0">
+		<div class="intro">
+		<div class="container" style="margin-left:auto;margin-right:auto;">
+		<div class="fotorama" data-transition="dissolve" data-autoplay="3000" data-allowfullscreen="true">
+        <img src="../images/banners/Main-Banner_5.jpg">
+        <img src="../images/banners/Main-Banner_2.jpg">
+        <img src="../images/banners/Main-Banner_4.jpg">
+        <img src="../images/banners/Main-Banner_3.jpg">
+        <img src="../images/banners/Main-Banner_1.jpg">
+        </div>
+
+		</div>
+		</div>
+	</div>
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1">
+			<div class="intro">
+			
+				<h1>History</h1>
+				<br><br>
+				<p class="fontsforweb_fontid_1416">
+					 CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
+
+                    
+				</p>
+				<br><br><br>
+				<p> 
+					Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
+				</p>
+			</div>
+		</div>
+		
+	    <div class="slide" id="slide2">
+	    <div class="intro">
+	    
+			<h1>Dance Style</h1>
+			<br><br>
+			<p>Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br><br><br>
+                 <p> 
+                The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br><br><br>
+                <p> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br><br><br>
+                <p>While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p>
+		</div>
+		</div>
+
+	</div>
+	<div class="section" id="section2">
+
+		<div class="intro">
+
+		
+			<div id="galleryherepls" style="width:80%;overflow:false;margin-left:auto;margin-right:auto ;padding-bottom:30%;margin-bottom:10%;">
+
+			    <img src="../images/team_thumbnail/141_10.jpg"
+			    data-desc="Meghna Baskar"
+			    title="Captain"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_10.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_17.jpg"
+			    data-desc="Disha Bora"
+			    title="Captain"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_17.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_19.jpg"
+			    data-desc="Suruchi Sheth"
+			    title="Vice-Captain"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_19.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_12.jpg"
+			    data-desc="Shyama Sadashiv"
+			    title="Vice Captain"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_12.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_20.jpg"
+			    alt="Vinita Israni"
+			    data-desc="Manager"
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_20.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_01.jpg"
+			    alt="Aatish Nayak"
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_01.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_02.jpg"
+			    alt="Vinay Viswanathan"
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_02.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_03.jpg"
+			    alt="Pravek Karwe"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_03.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_04.jpg"
+			    alt="Anuj Patel"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_04.jpg"
+			    /> 
+
+			    <img src="../images/team_thumbnail/141_06.jpg"
+			    alt="Wilson Sa"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_06.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_07.jpg"
+			    alt="Arul Sundaramoorthy"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_07.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_08.jpg"
+			    alt="Rohan Meringenti"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_08.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_09.jpg"
+			    alt="Raul Larsen"
+
+			    data-category="Male"
+			    data-fullsrc="../images/team_full/500_09.jpg"
+			    /> 
+
+			    <img src="../images/team_thumbnail/141_11.jpg"
+			    alt="Nikita Sharma"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_11.jpg"
+			    /> 
+
+			    <img src="../images/team_thumbnail/141_13.jpg"
+			    alt="Shilpa Murthy"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_13.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_14.jpg"
+			    alt="Sruthi Ramesh"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_14.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_15.jpg"
+			    alt="Madhu Govindaswamy"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_15.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_16.jpg"
+			    alt="Anusha Kukreja"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_16.jpg"
+			    /> 
+
+			    <img src="../images/team_thumbnail/141_18.jpg"
+			    alt="Riya Savla"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_18.jpg"
+			    /> 
+
+
+			    <img src="../images/team_thumbnail/141_21.jpg"
+			    alt="Anne-Sophie Kim"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_21.jpg"
+			    /> 
+			    <img src="../images/team_thumbnail/141_22.jpg"
+			    alt="Pragna Mannam"
+
+			    data-category="Female"
+			    data-fullsrc="../images/team_full/500_22.jpg"
+			    /> 
+
+			</div>
+		</div>
+	</div>
+
+	<div class="section" id="section3">
+
+		<div class="intro">
+			
+        <center><img src="../images/Donations5.png" height="100%"></center>
+        </div>
+     </div>
+     <div class="section" id="section1">
+	    <div class="slide" id="slide1">
+			<div class="intro">
+			
+				<h1>Get in Touch!</h1>
+				<br><br>
+				<p>
+					Having a special day? Whether it is an engagement, cultural show or a sweet 16, we are more than happy to bring our talents to your stage. Hire us for a vibrant dance performance for your event! Although we focus on garba-raas, we have talented dancers trained in Bollywood, Classical, and various forms of folk dance! We are more than happy to work with your schedule and logistics. Just get it touch with us to get the process started!
+
+                    
+				</p>
+				
+			</div>
+		</div>
+		
+	    <div class="slide" id="slide2">
+	    <div class="intro">
+	    
+			<h1>Interested In Costume Rental?</h1>
+			<br><br>
+			<p>Interested in renting our costumes for a special event or performance? Shoot us an email below and we can get back to you with pricing, logistics and more photos!</p><br><br><br><br>
+                
+		</div>
+		</div>
+		<div class="slide" id="slide3">
+		<div class="intro" style="width:80%;overflow:false;margin-left:auto;margin-right:auto">
+			<script type="text/javascript" src="../js/jqBootstrapValidation.js"></script>
+        <script type="text/javascript" src="../js/contact_me.js"></script>
+         <!-- Contacts -->
+         <div id="contacts">
+           <div class="row">  
+           <h1>
+            Feel free to contact us below!</h1>     
+            <br><br><br><br>
+             <!-- Alignment -->
+             <div class="contactCenter">
+                <div class="col-md-6">
+                   <!-- Form itself -->
+                  <form name="sentMessage" class="well" id="contactForm"  novalidate>
+                       
+                         <div class="control-group">
+                            <div class="controls">
+                                <input type="text" class="form-control" 
+                                              placeholder="Full Name" id="name" required
+                                           data-validation-required-message="Please enter your name" />
+                                  
+                           </div>
+                         </div>      
+                        </br>   
+                        <div class="control-group">
+                          <div class="controls">
+                                <input type="email" class="form-control" placeholder="Email" 
+                                                       id="email" required
+                                                      data-validation-required-message="Please enter your email" />
+                        </div>
+                    </div>  
+                    </br>    
+                    <div class="control-group">
+                          <div class="controls">
+                                <input type="text" class="form-control" placeholder="Organization Name (Not Required)" 
+                                                       id="orgName" 
+                                                      data-validation-required-message="Please enter your email" />
+                        </div>
+                    </div>  
+                    </br>  
+                    </form>
+                    </div>        
+                    <div class="col-md-6">
+                   <!-- Form itself -->
+                    <form name="sentMessage" class="well" id="contactForm"  novalidate>
+                       <div class="control-group">
+                         <div class="controls">
+                                         <textarea rows="10" cols="100" class="form-control" 
+                               placeholder="Message" id="message" required
+                               data-validation-required-message="Please enter your message" minlength="5" 
+                               data-validation-minlength-message="Min 5 characters" 
+                                maxlength="999" style="resize:none"></textarea>
+                        </div>
+                       </div>     
+                       </br>             
+                     <div id="success"> </div> <!-- For success/fail messages -->
+                    <button type="submit" class="btn btn-primary pull-right">Send</button><br />
+                  </form>
+                </div>
+              </div>
+            </div>
+            </div>
+            </div>
+
+	</div>
+</div>
+
+
+</body>
+</html>

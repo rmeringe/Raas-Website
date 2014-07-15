@@ -54,11 +54,14 @@
 		padding:40px 0 0 0;
 		font-size: 3em;
 	}
+
+
 	
 	/* Centered texts in each section 
 	* --------------------------------------- */
 	.section{
 		text-align:center;
+
 	}
 
 	/* Fixed header and footer.
@@ -103,87 +106,134 @@
 
 
 	</style>
-
+	
 	<!--[if IE]>
 		<script type="text/javascript">
 			 var console = { log: function() {} };
 		</script>
 	<![endif]-->
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-	
+	<script src="console.fix.min.js"></script>
+	<script src="jquery-1.11.1.js"></script>
+	<!--
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+	<!--<script src="TweenMax.min.js"></script>
+	<script>window.TweenMax || document.write('<script src="js/TweenMax-1.10.3.min.html"><\/script>')</script>-->
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>	
-
+	<script type="text/javascript" language="javascript" src="../js/jquery.easing.1.3.js"></script>
+	<script src="jquery.mousewheel.js" type="text/javascript"></script>
+	<script type="text/javascript" src="jquery.jscrollpane.js"></script>
+	<script src="alertify.min.js"></script>
+	<script src="utils.min.js"></script>
+	<script src="parallaxSite.js"></script>
+	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	
+	<script src="main.min.js"></script>		
+	
+	
+	
+	
+<!--not needed
 	<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
 
 
 
 	<script type="text/javascript" src="../js/jquery.galereya.min.js"></script>
-	<script type="text/javascript" src="jquery.fullPage.js"></script>
+	
 	<script type="text/javascript" src="examples.js"></script>
+
 
     <script src="../js/bootstrap.js"></script>
    
-    <script type="text/javascript" language="javascript" src="../js/jquery.easing.1.3.js"></script>
+    
     <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.js"></script> <!-- 16 KB -->
     
 
-    <script type="text/javascript">
-            $(function() {
-				/**
-				* for each menu element, on mouseenter, 
-				* we enlarge the image, and show both sdt_active span and 
-				* sdt_wrap span. If the element has a sub menu (sdt_box),
-				* then we slide it - if the element is the last one in the menu
-				* we slide it to the left, otherwise to the right
-				*/
-                $('#sdt_menu > li').bind('mouseenter',function(){
-					var $elem = $(this);
-					$elem.find('img')
-						 .stop(true)
-						 .animate({
-							'width':'170px',
-							'height':'170px',
-							'left':'0px'
-						 },400,'easeOutBack')
-						 .andSelf()
-						 .find('.sdt_wrap')
-					     .stop(true)
-						 .animate({'top':'140px'},500,'easeOutBack')
-						 .andSelf()
-						 .find('.sdt_active')
-					     .stop(true)
-						 .animate({'height':'170px'},300,function(){
-						var $sub_menu = $elem.find('.sdt_box');
-						if($sub_menu.length){
-							var left = '170px';
-							if($elem.parent().children().length == $elem.index()+1)
-								left = '-170px';
-							$sub_menu.show().animate({'left':left},200);
-						}	
-					});
-				}).bind('mouseleave',function(){
-					var $elem = $(this);
-					var $sub_menu = $elem.find('.sdt_box');
-					if($sub_menu.length)
-						$sub_menu.hide().css('left','0px');
+<!-------Experimental-->
+<script type="text/javascript">
+
+
+		$(function(){
+			$('.scroll-pane').jScrollPane({
+				autoReinitialise: true
+			});
+			
+		});
+		
+		$(document).ready(function() {
+
+
+			var pepe = $.fn.fullpage({
+				mouseScrolling: true,
+				anchors: ['home', 'about', 'ourteam', 'gallery', 'donate', 'contact'],
+				menu: '#cssmenu',
+				autoScrolling:true,
+
+				verticalCentered: true,
+				resize: true,
+				scrollingSpeed: 2000,
+				scrollOverflow:false,
+				css3:true,
+				navigation:true,
+				
+				afterLoad: function(anchorLink, index){
 					
-					$elem.find('.sdt_active')
-						 .stop(true)
-						 .animate({'height':'0px'},300)
-						 .andSelf().find('img')
-						 .stop(true)
-						 .animate({
-							'width':'0px',
-							'height':'0px',
-							'left':'85px'},400)
-						 .andSelf()
-						 .find('.sdt_wrap')
-						 .stop(true)
-						 .animate({'top':'25px'},500);
-				});
-            });
-        </script>
-	
+					if(index == 'about'){
+						console.log("Section boombox ended loading");
+					}
+		
+					//using anchorLink
+					if(anchorLink == 'gallery'){
+						console.log("Section lineup ended loading");
+					}
+				}
+			});
+
+			});
+
+</script>
+
+<style>
+#section0 {
+	background:#0f1341 ;
+	background-size:cover;
+}
+
+#section1 {
+	background:#0f1341 ;
+	background-size:cover;
+}
+
+#section2 {
+	background:#0f1341 ;
+	background-size:cover;
+}
+
+#section3 {
+	background:#0f1341 ;
+	background-size:cover;
+}
+
+#section4 {
+	background:#0f1341 ;
+	background-size:cover;
+}
+
+#section5 {
+	background:#0f1341;
+	background-size:cover;
+}
+
+#section6 {
+	background:#0f1341 ;
+	background-size:cover;
+}</style>
+
+
+
+
+    
+	<!--
 	<script>
     $(function() {
         $('#galleryherepls').galereya();
@@ -192,7 +242,7 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage','4thPage','5thPage'],
+				anchors: ,
 				//slidesColor: ['#6495ED', "#008080", "rgb(27,188,155)","rgb(198,61,15)"],
 				'scrollOverflow': true,
 				css3: true,
@@ -202,11 +252,12 @@
 			});
 		});
 	</script>
+	-->
 	<!--#333 url(../images/background.jpg) repeat top;-->
 	<style>
 	
 	                body{
-	                    background:rgba(147, 112, 219, 1);
+	                    color:green;
 	                    font-family:Arial;
 	                    
 	                }
@@ -238,42 +289,32 @@
 	            }
 	               a, a:hover, a:active, a:visited { color: white; }
 	           
-#section0{
-		background: -webkit-gradient(linear, top left, bottom left, from(#7baabe), to(#969ac6));
-		background: -webkit-linear-gradient(#7BAABE, #969AC6);
-		background: linear-gradient(rgba(100, 149, 237, 1),
-							     rgba(147, 112, 219, 1));
-	}
-	#section1{
-		background: -webkit-gradient(linear, top left, bottom left, from(#92a1ca), to(#76c2bd));
-		background: -webkit-linear-gradient(#92a1ca, #76c2bd);
-		background: linear-gradient(rgba(147, 112, 219, 1),#76c2bd);
-	}
+
 		
 	        </style>
 	        <link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
 </head>
-<body>
+<body id="home">
 
 <div id="header">
 	<div id='cssmenu'>
 	<ul>
-	   <li class='active'><a href='index.html'><span>Home</span></a></li>
+	   <li class='active' data-menuanchor="home"><a href='#home'><span>Home</span></a></li>
 
-	   <li class='has-sub'><a href='#'><span>About</span></a>
+	   <li class='has-sub'><a href='#about' data-menuanchor="about"><span>About</span></a>
 	      <ul>
-	         <li class='has-sub'><a href='#'><span>Team History</span></a>
+	         <li class='has-sub'><a href='#about'><span>Team History</span></a>
 	
 	         </li>
-	         <li class='has-sub'><a href='#'><span>Dance Style</span></a>
+	         <li class='has-sub'><a href='#about'><span>Dance Style</span></a>
 	   
 	         </li>
 	      </ul>
 	   </li>
-	   <li><a href='#'><span>Our Team</span></a></li>
-	   <li><a href='#'><span>Gallery</span></a></li>
-	   <li><a href='#'><span>Donate</span></a></li>
-	   <li class='last'><a href='#'><span>Contact</span></a></li>
+	   <li><a href='#ourteam'><span>Our Team</span></a></li>
+	   <li><a href='#gallery'><span>Gallery</span></a></li>
+	   <li><a href='#donate'><span>Donate</span></a></li>
+	   <li class='last'><a href='#contact'><span>Contact</span></a></li>
 	</ul>
 	</div>
 	<hr style="bottom:0px;width:100%;height:5px;background-color:#F62217;z-index:99999">
@@ -329,76 +370,7 @@
     	});
 </script>
 <!--
-<div id="header">
-	<div id="left"> <img src="../images/headLogo.fw.png" width="auto"></div>
-	<div id="middle">
-		<h1 style="text-align:left;font-family:Abril Flatface;font-weight:lighter;"> </h1>
-			<div class="content" >
-			
-			<ul id="sdt_menu" xml:id="menu" class="sdt_menu">
-				<li>
-					<a href="#">
-						
-						<span class="sdt_active"></span>
-						<span class="sdt_wrap">
-                            <span class="sdt_link"><center>Home</center></span>
-                        </span>
-					</a>
-				</li>
-				<li>
-                    <a href="../about/aboutHistory.html">
-                        
-                        <span class="sdt_active"></span>
-                        <span class="sdt_wrap">
-                            <span class="sdt_link" >About </span>
-                        </span>
-                    </a>
 
-                </li>
-				<li>
-					<a href="../gallery/gallery.html">
-                       
-                        <span class="sdt_active"></span>
-                        <span class="sdt_wrap">
-                            <span class="sdt_link" >Our Team</span>
-                        </span>
-                    </a>
-				</li>
-				<li>
-                    <a href="../donate/donateUs.html">
-                       
-                        <span class="sdt_active"></span>
-                        <span class="sdt_wrap">
-                            <span class="sdt_link" >Gallery</span>
-                        </span>
-                    </a>
-                </li>
-				<li>
-                    <a href="../donate/donateUs.html">
-                       
-                        <span class="sdt_active"></span>
-                        <span class="sdt_wrap">
-                            <span class="sdt_link" >Donate</span>
-                        </span>
-                    </a>
-                </li>
-				<li>
-                    <a href="../contact/contact.html">
-                        
-                        <span class="sdt_active"></span>
-                        <span class="sdt_wrap">
-                            <span class="sdt_link" >Contact</span>
-                        </span>
-                    </a>
-                    <div class="sdt_box">
-                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_1_name">Hire Us</a>
-                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_2_name">Costume Rental</a>
-                            <a href="../contact/contact.html#tabs|Tabs_Group_name:Tab_3_name">Questions?</a>
-                    </div>
-                </li>
-			</ul>
-		</div>
-  	</div>
 
 
 
@@ -412,40 +384,55 @@
 <div id="footer"><img src="../images/footer.fw.png"; width:"auto" height="100%" bottom="0px"></div>
 
 <div id="fullpage">
-	<div class="section " id="section0">
-		<div class="intro">
-		<div class="container" style="margin-left:auto;margin-right:auto;">
-		<div class="fotorama" data-transition="dissolve" data-autoplay="3000" data-allowfullscreen="true">
-        <img src="../images/banners/Main-Banner_5.jpg">
-        <img src="../images/banners/Main-Banner_2.jpg">
-        <img src="../images/banners/Main-Banner_4.jpg">
-        <img src="../images/banners/Main-Banner_3.jpg">
-        <img src="../images/banners/Main-Banner_1.jpg">
+	<div class="section sec-home" id="section0">
+		<div class="intro" >
+		<!--
+		<div class="container" style="margin-left:auto;margin-right:auto;" data-speed="1.5" data-t="10" data-b="90">
+		<div class="fotorama" data-transition="dissolve" data-autoplay="3000" data-allowfullscreen="true" data-speed="1.5" data-t="10" data-b="90">
+        <img src="../images/banners/Main-Banner_5.jpg" data-speed="1.5" data-t="10" data-b="90">
+        <img src="../images/banners/Main-Banner_2.jpg" data-speed="1.5" data-t="10" data-b="90">
+        <img src="../images/banners/Main-Banner_4.jpg" data-speed="1.5" data-t="10" data-b="90">
+        <img src="../images/banners/Main-Banner_3.jpg" data-speed="1.5" data-t="10" data-b="90">
+        <img src="../images/banners/Main-Banner_1.jpg" data-speed="1.5" data-t="10" data-b="90">
         </div>
 
-		</div>
+		</div>-->
+		<h1 class="plx" id="openerText" data-speed="1.5" data-t="30" data-b="60"> Hello World!</h1>
 		</div>
 	</div>
+	<style>
+	#texto {
+	position: absolute;
+	top: 80%;/*50*/
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: -120px;
+	z-index: 1;
+}
+</style>
+</style>
 	<div class="section" id="section1">
 	    <div class="slide" id="slide1">
-			<div class="intro">
+			<div class="intro" id="sec-about">
 			
-				<h1>History</h1>
+				<h1 class="plx" id="texto" data-speed="3" data-t="0" data-b="50" id>History</h1>
 				<br><br>
-				<p class="fontsforweb_fontid_1416">
+				<p class="plx" id="asdf" data-speed="1.5" data-t="0" data-b="80">
 					 CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
 
                     
 				</p>
 				<br><br><br>
-				<p> 
+				<p class="plx" data-speed="1.0" data-t="0" data-b="80" id="tasdf"> 
 					Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
 				</p>
 			</div>
 		</div>
 		
 	    <div class="slide" id="slide2">
-	    <div class="intro">
+	    <div class="intro" id="sec-about">
 	    
 			<h1>Dance Style</h1>
 			<br><br>
@@ -460,9 +447,9 @@
 	</div>
 	<div class="section" id="section2">
 
-		<div class="intro">
+		<div class="intro" id="sec-ourteam">
 
-		
+		<!--
 			<div id="galleryherepls" style="width:80%;overflow:false;margin-left:auto;margin-right:auto ;padding-bottom:30%;margin-bottom:10%;">
 
 			    <img src="../images/team_thumbnail/141_10.jpg"
@@ -600,7 +587,20 @@
 			    data-fullsrc="../images/team_full/500_22.jpg"
 			    /> 
 
-			</div>
+			</div>-->
+			<style>
+			#texto1 {
+	position: absolute;
+	top: 100%;/*50*/
+	left:0;
+	right:0;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: -120px;
+	z-index: 1;
+}
+</style>
+			<h1 class="plx" id="texto1" data-speed="2" data-t="0" data-b="50"> Hello Again </h1>
 		</div>
 	</div>
 
@@ -611,7 +611,14 @@
         <center><img src="../images/Donations5.png" height="100%"></center>
         </div>
      </div>
-     <div class="section" id="section1">
+     <div class="section" id="section3">
+
+		<div class="intro">
+			
+        <center><img class="plx" data-speed="1.0" data-t="0" data-b="80" id="donationimg" src="../images/Donations5.png" height="100%"></center> <p class="plx" data-speed="1.0" data-t="0" data-b="80" id="placer"> Help!</p>
+        </div>
+     </div>
+     <div class="section" id="section4">
 	    <div class="slide" id="slide1">
 			<div class="intro">
 			

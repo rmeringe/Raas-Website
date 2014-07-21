@@ -56,7 +56,7 @@ function moveElements(cPage){
 	
 	// prev
 	if(arr[prevPos]){
-		console.log("prev called")
+
 		$("#sec-"+arr[prevPos]+" .plx").each(function() {
 			console.log("Goes in here1");
 			idImg = $(this).attr("id");
@@ -69,8 +69,7 @@ function moveElements(cPage){
 	
 	// current
 	$("#sec-"+cPage+" .plx").each(function() {
-		console.log("current called")
-	
+		console.log("goes here");
 		idImg = $(this).attr("id");
 		element = $("#sec-"+cPage+" .plx#"+idImg);
 
@@ -80,13 +79,12 @@ function moveElements(cPage){
 	
 	// next
 	if(arr[nextPos]){
-		console.log("next called")
 		$("#sec-"+arr[nextPos]+" .plx").each(function() {
 			idImg = $(this).attr("id");
 			element = $("#sec-"+arr[nextPos]+" .plx#"+idImg);
 			
 			//
-			TweenMax.to([element], $(this).attr("data-speed"),{css:{top: $(this).attr("data-n")+"%"}, ease:Power1.easeOut});
+			TweenMax.to([element], $(this).attr("data-speed"),{css:{top: $(this).attr("data-b")+"%"}, ease:Power1.easeOut});
 		});
 	}
 	

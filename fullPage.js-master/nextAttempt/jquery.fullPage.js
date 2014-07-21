@@ -165,19 +165,16 @@
 		if(options.mouseScrolling){
 			var sq = {};
 			sq = document;
-		console.log("How about now");
+	
 			if (sq.addEventListener){
-				console.log("Goes here instead");
 				sq.addEventListener("mousewheel", MouseWheelHandler(), false);
 				sq.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
 			}else{
-				console.log("adds mouse wheel handler");
 				sq.attachEvent("onmousewheel", MouseWheelHandler());
 			}
 		}
 
 		function MouseWheelHandler() {
-
 			return function(e) {
 				// cross-browser wheel delta
 				var e = window.event || e;
@@ -187,16 +184,16 @@
 				if (!isMoving) { //if theres any #
 					//scrolling down?
 					if (delta < 0) {
-						
+						if(centrosPopUp == false){
 							$.fn.fullpage.moveSlideDown();
-					
+						}
 					}
 
 					//scrolling up?
 					else {
-						
+						if(centrosPopUp == false){
 							$.fn.fullpage.moveSlideUp();
-						
+						}
 					}
 				}
 
@@ -219,17 +216,14 @@
 		}
 
 		$.fn.fullpage.moveSlideDown = function (){
-			console.log("moves slide down");
-			console.log("current",$('.section.active'));
 			var next = $('.section.active').next('.section');
-			console.log("next",next);
+			
 			//looping to the top if there's no more sections below
 			if(options.loopBottom && !next.length){
 				next = $('.section').first();
 			}
 	
 			if (next.length > 0 || (!next.length && options.loopBottom)){
-
 				next.addClass('active').siblings().removeClass('active');
 				scrollPage(next);
 			} 

@@ -18,6 +18,10 @@
 	<link href="../css/style.css" type="text/css" media="all" rel="stylesheet" />
 	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.css" rel="stylesheet"> 
 	<link rel="stylesheet" href="lib/css/jquery.maximage.css" type="text/css" media="screen" title="CSS" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="demo.css" />
+		<link rel="stylesheet" type="text/css" href="component.css" />
+		<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
+		<script src="modernizr.custom.js"></script>
 <!-- 3 KB -->
 	<link href="../fonts/font.css" rel="stylesheet">
 
@@ -33,7 +37,9 @@
 	@font-face {
 	font-family: '33535gillsansmt';
 	src: url('../fonts/33535gillsansmt.eot');
-	src: local('../fonts/33535gillsansmt'), url('../fonts/33535gillsansmt.woff') format('woff'), url('../fonts/33535gillsansmt.ttf') format('truetype');
+	src: local('../fonts/33535gillsansmt'), 
+	url('../fonts/33535gillsansmt.woff') format('woff'), 
+	url('../fonts/33535gillsansmt.ttf') format('truetype');
 	}
 	</style>
 	
@@ -141,13 +147,18 @@
 	<script src="main.min.js"></script>		
 	<script src="jquery.queryloader2.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
-<script src="lib/js/jquery.maximage.min.js" type="text/javascript"></script>
+	<script src="lib/js/jquery.maximage.min.js" type="text/javascript"></script>
+	<script src="imagesloaded.pkgd.min.js"></script>
+	<script src="masonry.pkgd.min.js"></script>
+	<script src="classie.js"></script>
+	<script src="cbpGridGallery.js"></script>
+	<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
 	
 	
 	
 	
 <!--not needed
-	<script type="text/javascript" src="vendors/jquery.slimscroll.min.js"></script>
+	
 
 
 
@@ -185,7 +196,7 @@
 				verticalCentered: true,
 				resize: true,
 				scrollingSpeed: 2000,
-				scrollOverflow:false,
+				scrollOverflow:true,
 				css3:true,
 				navigation:true,
 				
@@ -210,35 +221,32 @@
 
 
 #section1 {
-	background-image:url(images/about.jpg);
+	/*background-image:url(images/about.jpg);
 	background-size:cover;
-	background-repeat:no-repeat;
+	background-repeat:no-repeat;*/
+	background-image: url(../images/binding_dark.png);
 
 }
 
 #section2 {
-	background:aqua;
-	background-size:cover;
+	background-image: url(../images/binding_dark.png);
+	
 }
 
 #section3 {
-	background:grey;
-	background-size:cover;
+	background-image: url(../images/binding_dark.png);
 }
 
 #section4 {
-	background:yellow ;
-	background-size:cover;
+	background-image: url(../images/binding_dark.png);
 }
 
 #section5 {
-	background:black;
-	background-size:cover;
+	background-image: url(../images/binding_dark.png);
 }
 
 #section6 {
-	background:green ;
-	background-size:cover;
+	background-image: url(../images/binding_dark.png);
 }</style>
 
 
@@ -329,7 +337,7 @@
 	   <li class='last'><a href='#contact'><span>Contact</span></a></li>
 	</ul>
 	</div>
-	<hr style="bottom:0px;width:100%;height:5px;background-color:#F62217;z-index:99999;margin-top: 0px;
+	<hr style="bottom:0px;width:100%;height:5px;background-color:#CC0000;z-index:99999;margin-top: 0px;
 margin-bottom: 0px;
 border: 0px;">
 
@@ -418,7 +426,7 @@ border: 0px;">
 		</div>-->
 		<div id="maximage">
     <div class="first-item">
-        <img src="lib/images/demo/wall_portrait.jpg" alt="" />
+        <img src="images/about.jpg" alt="" />
         <img id="gradient" src="lib/images/demo/gradient.png" alt="" />
         <div class="in-slide-content">
             <p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
@@ -436,6 +444,7 @@ border: 0px;">
     <img src="lib/images/demo/coffee_shop.jpg" alt="" />
     <img src="lib/images/demo/gas_station.jpg" alt="" />
 
+
 </div>
 <a href="" id="arrow_left">
         <img src="lib/images/demo/arrow_left.png" alt="Slide Left" />
@@ -447,15 +456,20 @@ border: 0px;">
 	
 
 	<div class="section sec-about" id="section1">
-	    <div class="slide" id="slide1">
-			<div class="intro" id="sec-about">
-			<!--
-				<h1 class="plx" id="texto" data-speed="3" data-t="0" data-b="50" id>History</h1>
-				<br><br>
-				<p class="plx" id="asdf" data-speed="1.5" data-t="0" data-b="80">
-					 CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
 
-                    
+	    <div class="slide" id="slide1">
+			<div class="intro" height=100% id="sec-about">
+			<h1 class="33535gillsansmt">Hello </h1>
+			<!--<img  class="plx" id="dandiyas" src="crossed.dandiyas.png" height="600px" width="250px" style="position:absolute;left:100px;z-index:4" data-speed="2" data-t="100" data-b="0" data-n="-50">
+
+				
+				
+				<h1 data-speed="3" data-t="0" data-b="50" style="font-family:33535gillsansmt">History</h1>
+				<br><br>
+				<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:33535gillsansmt">
+					 CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
+					 </p>
+                 <!--   
 				</p>
 				<br><br><br>
 				<p class="plx" data-speed="1.0" data-t="0" data-b="80" id="tasdf"> 
@@ -480,7 +494,376 @@ border: 0px;">
 	</div>
 	<div class="section sec-ourteam" id="section2">
 
-		<div class="intro" id="sec-ourteam">
+		<div  class="intro" id="sec-ourteam" style="margin-top:2%;margin-bottom:10%">
+		
+		<br><br><br><br>
+		<div id="grid-gallery" class="grid-gallery">
+    <section class="grid-wrap">
+        <ul class="grid">
+            <li class="grid-sizer"></li><!-- for Masonry column width -->
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_01.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>AATISH NAYAK</h3></figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_02.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_03.jpg" style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_04.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_05.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_06.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_07.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_08.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_09.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_10.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_11.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+                         <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_12.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_13.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_14.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_15.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_16.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+                         <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_17.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_18.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_19.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+                         <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_20.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_21.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+             <li>
+                <figure>
+                    <img src="../images/team_thumbnail/141_22.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
+                </figure>
+            </li>
+
+
+        </ul>
+    </section><!-- // grid-wrap -->
+    <section class="slideshow">
+        <ul>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Letterpress asymmetrical</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img01"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Vice velit chia</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img02"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Brunch semiotics</h3>
+                       
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img03"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Chillwave nihil occupy</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img04"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Kale chips lomo biodiesel</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img05"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+                        <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+                        <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+                        <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                </figure>
+            </li>
+
+
+        </ul>
+        <nav>
+            <span class="icon nav-prev"></span>
+            <span class="icon nav-next"></span>
+            <span class="icon nav-close"></span>
+        </nav>
+        <div class="info-keys icon">Navigate with arrow keys</div>
+    </section><!-- // slideshow -->
+</div><!-- // grid-gallery -->
 
 		<!--
 			<div id="galleryherepls" style="width:80%;overflow:false;margin-left:auto;margin-right:auto ;padding-bottom:30%;margin-bottom:10%;">
@@ -620,9 +1003,9 @@ border: 0px;">
 			    data-fullsrc="../images/team_full/500_22.jpg"
 			    /> 
 
-			</div>-->
+			
 
-			<h1 class="plx" id="texto1" data-speed="1" data-t="80" data-b="50" data-n="20" style="position:absolute;text-align:center;width:100%"> Hello Again </h1>
+			<h1 class="plx" id="texto1" data-speed="1" data-t="80" data-b="50" data-n="20" style="position:absolute;text-align:center;width:100%"> Hello Again </h1></div>-->
 		</div>
 	</div>
 
@@ -630,7 +1013,7 @@ border: 0px;">
 
 		<div class="intro" id="sec-gallery">
 			
-        <center><img src="../images/Donations5.png" height="100%"></center>
+        <center><img src="../images/Donations5.png" height="100%" style="-webkit-filter:sepia(100%)"></center>
         </div>
      </div>
      <div class="section sec-donate" id="section4">
@@ -755,6 +1138,20 @@ $(function(){
 $(document).ready(function () {
     $("body").queryLoader2();
 });
+
 </script>
+<script>
+	    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+	    $(function(){
+    $('#grid-gallery').slimScroll({
+        height: '800px',
+        railVisible: true,
+    	alwaysVisible: true,
+    	size:'10px',
+    	color:'#333',
+    	allowPageScroll:false
+    });
+});
+	</script>
 </body>
 </html>

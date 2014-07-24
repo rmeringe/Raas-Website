@@ -64,13 +64,14 @@ p{
 	font-size: 2em;
 }
 .intro {
-	margin-top: 15%; 
+	margin-top: 8%; 
 	margin-bottom:100px;
 }
 .intro p{
 	width: 70%;
 	margin: 0 auto;
 	font-size: 25px;
+	min-width:800px;
 }
 
 

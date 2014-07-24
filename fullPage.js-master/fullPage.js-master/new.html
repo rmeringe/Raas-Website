@@ -49,7 +49,7 @@
 	* --------------------------------------- */
 	h1{
 		font-size: 60px;	
-		font-family: arial,helvetica;
+		font-family: 'Lato'arial,helvetica;
 		color: #fff;
 		margin:0;
 		padding:0;
@@ -186,7 +186,12 @@
 		
 		$(document).ready(function() {
 
+			 $("body").queryLoader2(
+    	{
+    		minimumTime:500,
+    	 completeAnimation:"grow",
 
+    	});
 			var pepe = $.fn.fullpage({
 				mouseScrolling: true,
 				anchors: ['home', 'about', 'ourteam', 'gallery', 'donate', 'contact'],
@@ -323,10 +328,10 @@
 
 	   <li class='has-sub'><a href='#about' data-menuanchor="about"><span>About</span></a>
 	      <ul>
-	         <li class='has-sub'><a href='#about'><span>Team History</span></a>
+	         <li class='has-sub'><a href='#about' style="font-family:'Lato'"><span>Team History</span></a>
 	
 	         </li>
-	         <li class='has-sub'><a href='#about'><span>Dance Style</span></a>
+	         <li class='has-sub'><a href='#about' style="font-family:'Lato'"><span>Dance Style</span></a>
 	   
 	         </li>
 	      </ul>
@@ -447,7 +452,10 @@ border: 0px;">
 
 </div>
 <a href="" id="arrow_left">
-        <img src="lib/images/demo/arrow_left.png" alt="Slide Left" />
+        <img src="lib/images/demo/arrow_left.png" alt="Slide Left" style="position:absolute;right:100px;bottom:50px" />
+    </a>
+    <a href="" id="arrow_right">
+        <img src="lib/images/demo/arrow_right.png" alt="Slide Right" style="position:absolute;right:50px;bottom:50px"/>
     </a>
 
 		<!--<h1 class="plx" id="openerText" data-speed="1.5" data-t="30" data-b="60"> Hello World!</h1>-->
@@ -459,7 +467,15 @@ border: 0px;">
 
 	    <div class="slide" id="slide1">
 			<div class="intro" height=100% id="sec-about">
-			<h1 class="33535gillsansmt">Hello </h1>
+			<h1 style="font-family:Lato">Team History </h1>
+			<br><br><br><br>
+			<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
+					 CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
+					 </p>
+					 <br><br>
+					 <p class="plx" data-speed="1.0" data-t="0" data-b="80" id="tasdf" style="font-family:Lato;line-height:1.5;color:white"> 
+					Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
+				</p>
 			<!--<img  class="plx" id="dandiyas" src="crossed.dandiyas.png" height="600px" width="250px" style="position:absolute;left:100px;z-index:4" data-speed="2" data-t="100" data-b="0" data-n="-50">
 
 				
@@ -480,17 +496,18 @@ border: 0px;">
 		
 	    <div class="slide" id="slide2">
 	    <div class="intro" id="sec-about">
-	    <!--
-			<h1>Dance Style</h1>
-			<br><br>
-			<p>Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br><br><br>
-                 <p> 
+	    
+			<h1 style="font-family:Lato"> Dance Style</h1>
+			<br><br><br><br><br><br><br><br><br><br>
+			<div id="danceStyle">
+			<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br><br><br>
+                 <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
                 The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br><br><br>
-                <p> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br><br><br>
-                <p>While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p>-->
-		</div>
+                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br><br><br>
+                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p></div>
 		</div>
 
+	</div>
 	</div>
 	<div class="section sec-ourteam" id="section2">
 
@@ -503,7 +520,7 @@ border: 0px;">
             <li class="grid-sizer"></li><!-- for Masonry column width -->
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_01.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_01.jpg"  style="-webkit-filter:grayscale(100%) "alt="img01"/>
                     <figcaption><h3>AATISH NAYAK</h3></figcaption>
                 </figure>
             </li>
@@ -653,7 +670,7 @@ border: 0px;">
                         <h3>Letterpress asymmetrical</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img01"/>
+                    <img src="../images/team_full/500_01.jpg" alt="img01"/>
                 </figure>
             </li>
             <li>
@@ -662,7 +679,7 @@ border: 0px;">
                         <h3>Vice velit chia</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img02"/>
+                    <img src="../images/team_full/500_02.jpg" alt="img02"/>
                 </figure>
             </li>
             <li>
@@ -671,7 +688,7 @@ border: 0px;">
                         <h3>Brunch semiotics</h3>
                        
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img03"/>
+                    <img src="../images/team_full/500_03.jpg" alt="img03"/>
                 </figure>
             </li>
             <li>
@@ -680,7 +697,7 @@ border: 0px;">
                         <h3>Chillwave nihil occupy</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img04"/>
+                    <img src="../images/team_full/500_04.jpg" alt="img04"/>
                 </figure>
             </li>
             <li>
@@ -689,7 +706,43 @@ border: 0px;">
                         <h3>Kale chips lomo biodiesel</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img05"/>
+                    <img src="../images/team_full/500_05.jpg" alt="img05"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_06.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_07.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_08.jpg" alt="img06"/>
+                </figure>
+            </li>
+            <li>
+                <figure>
+                    <figcaption>
+                        <h3>Exercitation occaecat</h3>
+                        
+                    </figcaption>
+                    <img src="../images/team_full/500_09.jpg" alt="img06"/>
                 </figure>
             </li>
             <li>
@@ -707,43 +760,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <figcaption>
-                        <h3>Exercitation occaecat</h3>
-                        
-                    </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <figcaption>
-                        <h3>Exercitation occaecat</h3>
-                        
-                    </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <figcaption>
-                        <h3>Exercitation occaecat</h3>
-                        
-                    </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
-                </figure>
-            </li>
-            <li>
-                <figure>
-                    <figcaption>
-                        <h3>Exercitation occaecat</h3>
-                        
-                    </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_11.jpg" alt="img06"/>
                 </figure>
             </li>
                         <li>
@@ -752,7 +769,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_12.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -762,7 +779,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_13.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -772,7 +789,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_14.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -782,7 +799,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_15.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -792,7 +809,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_16.jpg" alt="img06"/>
                 </figure>
             </li>
                         <li>
@@ -801,7 +818,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_17.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -811,7 +828,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_18.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -821,7 +838,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_19.jpg" alt="img06"/>
                 </figure>
             </li>
                         <li>
@@ -830,7 +847,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_20.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -840,7 +857,7 @@ border: 0px;">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
-                    <img src="../images/team_full/500_10.jpg" alt="img06"/>
+                    <img src="../images/team_full/500_21.jpg" alt="img06"/>
                 </figure>
             </li>
 
@@ -857,7 +874,7 @@ border: 0px;">
 
         </ul>
         <nav>
-            <span class="icon nav-prev"></span>
+            <span class="icon nav-prev" style="left:0"></span>
             <span class="icon nav-next"></span>
             <span class="icon nav-close"></span>
         </nav>
@@ -1134,17 +1151,20 @@ $(function(){
     });
 });
 </script>
-<script> 
-$(document).ready(function () {
-    $("body").queryLoader2();
-});
 
-</script>
 <script>
 	    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 	    $(function(){
     $('#grid-gallery').slimScroll({
         height: '800px',
+        railVisible: true,
+    	alwaysVisible: true,
+    	size:'10px',
+    	color:'#333',
+    	allowPageScroll:false
+    });
+    $('#danceStyle').slimScroll({
+        height: '500px',
         railVisible: true,
     	alwaysVisible: true,
     	size:'10px',

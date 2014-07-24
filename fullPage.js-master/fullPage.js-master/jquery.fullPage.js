@@ -17,12 +17,12 @@
 			'resize' : true,
 			'slidesColor' : [],
 			'anchors':[],
-			'scrollingSpeed': 700,
+			'scrollingSpeed': 100,
 			'easing': 'easeInQuart',
 			'menu': false,
-			'navigation': false,
+			'navigation': true,
 			'navigationPosition': 'right',
-			'navigationColor': '#000',
+			'navigationColor': 'white',
 			'controlArrowColor': '#fff',
 			'loopBottom': false,
 			'loopTop': false,
@@ -57,7 +57,7 @@
 		
 		//creating the navigation dots 
 		if(options.navigation){
-			$('body').append('<div id="fullPage-nav"><ul></ul></div>');	
+			$('#fullpage').append('<div id="fullPage-nav"><ul></ul></div>');	
 			var nav = $('#fullPage-nav');
 
 			nav.css('color', options.navigationColor);
@@ -264,6 +264,18 @@
 			}
 			
 			dest = element.position();
+			console.log("Destionation",dest);
+			console.log("Element",element.data('anchor'));
+			if (element.data('anchor')=="gallery"){
+				dest.top=2836;
+			}
+			if (element.data('anchor')=="donate"){
+				dest.top=3739;
+			}
+			if (element.data('anchor')=="contact"){
+				dest.top=4642;
+			}
+
 			dtop = dest != null ? dest.top : null;
 			
 			var currentPage = element.data('anchor');
@@ -304,6 +316,7 @@
 		}
 		
 		function scrollToAnchor(){
+
 			//getting the anchor link in the URL and deleting the `#`
 			var value =  window.location.hash.replace('#', '');
 			
@@ -424,8 +437,9 @@
 			});
 		}
 		
-		$(window).bind('orientationchange', function(event) {
+		$(window).bind('resize', function(event) {
 		  doneResizing();
+		  setTimeout(doneResizing,100);
 		});
 
 		/**

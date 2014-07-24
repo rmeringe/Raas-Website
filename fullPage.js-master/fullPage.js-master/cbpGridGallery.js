@@ -58,7 +58,14 @@
   		extend( this.options, options );
   		this._init();
 	}
-
+	function sleep(milliseconds) {
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) {
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
+    }
+  }
+}
 	CBPGridGallery.prototype.options = {
 	};
 
@@ -333,6 +340,8 @@
 	// original debounce by John Hann
 	// http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
 	CBPGridGallery.prototype._resizeHandler = function() {
+		
+		console.log("trying to resize")
 		var self = this;
 		function delayed() {
 			self._resize();
@@ -341,7 +350,8 @@
 		if ( this._resizeTimeout ) {
 			clearTimeout( this._resizeTimeout );
 		}
-		this._resizeTimeout = setTimeout( delayed, 200 );
+		this._resizeTimeout = setTimeout( delayed, 200);
+
 	}
 
 	CBPGridGallery.prototype._resize = function() {
@@ -356,6 +366,7 @@
 				setTransform( this.nextItem, support.support3d ? 'translate3d(' + translateVal + 'px, 0, -150px)' : 'translate(' + translateVal + 'px)' );
 			}
 		}
+		
 	}
 
 	// add to global namespace

@@ -188,10 +188,28 @@
 
 			 $("body").queryLoader2(
     	{
-    		minimumTime:500,
+    		minimumTime:2000,
     	 completeAnimation:"grow",
 
     	});
+			$(function(){
+    $('#maximage').maximage({
+    	        backgroundSize: "contain",
+        cycleOptions: {
+           fx: 'fadeZoom',
+            speed: 2000,
+            timeout: 8000,
+            prev: '#arrow_left',
+            next: '#arrow_right',
+            fillElement:'#section0',
+            backgroundSize: 'contain'
+        },
+        onFirstImageLoaded: function(){
+            jQuery('#cycle-loader').hide();
+            jQuery('#maximage').fadeIn('fast');
+        }
+    });
+});
 			var pepe = $.fn.fullpage({
 				mouseScrolling: true,
 				anchors: ['home', 'about', 'ourteam', 'gallery', 'donate', 'contact'],
@@ -500,10 +518,10 @@ border: 0px;">
 			<h1 style="font-family:Lato"> Dance Style</h1>
 			<br><br><br><br><br><br><br><br><br><br>
 			<div id="danceStyle">
-			<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br><br><br>
+			<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br>
                  <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
-                The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br><br><br>
-                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br><br><br>
+                The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br>
+                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br>
                 <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p></div>
 		</div>
 
@@ -520,141 +538,141 @@ border: 0px;">
             <li class="grid-sizer"></li><!-- for Masonry column width -->
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_01.jpg"  style="-webkit-filter:grayscale(100%) "alt="img01"/>
+                    <img src="../images/team_thumbnail/141_01.jpg"  alt="img01"/>
                     <figcaption><h3>AATISH NAYAK</h3></figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_02.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_02.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_03.jpg" style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_03.jpg" alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_04.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_04.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_05.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_05.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
             <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_06.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_06.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_07.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_07.jpg" alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_08.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_08.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_09.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_09.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_10.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_10.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_11.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_11.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
                          <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_12.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_12.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_13.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_13.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_14.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_14.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_15.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_15.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_16.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_16.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
                          <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_17.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_17.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_18.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_18.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_19.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_19.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
                          <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_20.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_20.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_21.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_21.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
 
              <li>
                 <figure>
-                    <img src="../images/team_thumbnail/141_22.jpg"  style="-webkit-filter:grayscale(100%)"alt="img01"/>
+                    <img src="../images/team_thumbnail/141_22.jpg"  alt="img01"/>
                     <figcaption><h3>Letterpress asymmetrical</h3></figcaption>
                 </figure>
             </li>
@@ -666,16 +684,23 @@ border: 0px;">
         <ul>
             <li>
                 <figure>
-                    <figcaption>
+                  <div style="width:70%;float:left">
+                    <figcaption id="Big">
                         <h3>Letterpress asymmetrical</h3>
                         
                     </figcaption>
+
                     <img src="../images/team_full/500_01.jpg" alt="img01"/>
+                    </div>
+                    <div id="rightCap" style="background-color:#a8a8a8;width:30%;height:560px;float:right">
+                    <h3> Hello There!</h3>
+                    </div>
                 </figure>
+
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Vice velit chia</h3>
                         
                     </figcaption>
@@ -684,7 +709,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Brunch semiotics</h3>
                        
                     </figcaption>
@@ -693,7 +718,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Chillwave nihil occupy</h3>
                         
                     </figcaption>
@@ -702,7 +727,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Kale chips lomo biodiesel</h3>
                         
                     </figcaption>
@@ -711,7 +736,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -720,7 +745,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -729,7 +754,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -738,7 +763,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -747,7 +772,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -756,7 +781,7 @@ border: 0px;">
             </li>
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -765,7 +790,7 @@ border: 0px;">
             </li>
                         <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -775,7 +800,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -785,7 +810,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -795,7 +820,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -805,7 +830,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -814,7 +839,7 @@ border: 0px;">
             </li>
                         <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -824,7 +849,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -834,7 +859,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -843,7 +868,7 @@ border: 0px;">
             </li>
                         <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -853,7 +878,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -863,7 +888,7 @@ border: 0px;">
 
             <li>
                 <figure>
-                    <figcaption>
+                    <figcaption id="Big">
                         <h3>Exercitation occaecat</h3>
                         
                     </figcaption>
@@ -1048,10 +1073,18 @@ border: 0px;">
 				<br><br>
 				<p>
 					Having a special day? Whether it is an engagement, cultural show or a sweet 16, we are more than happy to bring our talents to your stage. Hire us for a vibrant dance performance for your event! Although we focus on garba-raas, we have talented dancers trained in Bollywood, Classical, and various forms of folk dance! We are more than happy to work with your schedule and logistics. Just get it touch with us to get the process started!
+					<style>
+					.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}</style>
 
                     
 				</p>
-				
+				<img  class="plx rotate90" id="dandiyas" src="crossed.dandiyas.png" height="700px" width="250px" style="position:relative;z-index:4;bottom:50px" data-speed="2" data-t="100" data-b="0" data-n="-50">
 			</div>
 		</div>
 		
@@ -1132,24 +1165,7 @@ border: 0px;">
 	</div>
 </div>
 <script type="text/javascript" charset="utf-8">
-$(function(){
-    $('#maximage').maximage({
-    	        backgroundSize: "contain",
-        cycleOptions: {
-           fx: 'fadeZoom',
-            speed: 800,
-            timeout: 8000,
-            prev: '#arrow_left',
-            next: '#arrow_right',
-            fillElement:'#section0',
-            backgroundSize: 'contain'
-        },
-        onFirstImageLoaded: function(){
-            jQuery('#cycle-loader').hide();
-            jQuery('#maximage').fadeIn('fast');
-        }
-    });
-});
+
 </script>
 
 <script>

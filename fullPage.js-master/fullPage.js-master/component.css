@@ -33,7 +33,7 @@
 .grid-gallery figcaption h3 {
 	margin: 0;
 	padding: 0 0 0.5em;
-	color:#3c0000 !important;
+	color:#3c0000 ;
 	font-family:'Lato';
 	font-weight:bolder;
 	
@@ -54,6 +54,7 @@
 
 .grid {
 	margin: 0 auto;
+	margin-bottom:50px;
 }
 
 .grid li {
@@ -66,16 +67,24 @@
 	padding: 15px;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
+	-webkit-filter:grayscale(100%);
 }
 
 .grid li:hover figure {
 	opacity:.7;
+	-webkit-filter:grayscale(0%);
 }
 
 .grid figcaption {
 	background: #a8a8a8;
 	padding: 10px;
 	
+}
+
+#Big h3{ 
+	color: white;
+	bacground:#a8a8a8 !important;
+	padding:10px;
 }
 
 /* Slideshow style */
@@ -125,11 +134,11 @@
 }
 
 .slideshow li {
-	width: 660px;
+	width: 910px;
 	height: 560px;
 	position: absolute;
 	top: 50%;
-	left: 50%;
+	left: 40%;
 	margin: -280px 0 0 -330px;
 	visibility: hidden;
 }

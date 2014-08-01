@@ -210,7 +210,7 @@
         }
     });
 });
-			var pepe = $.fn.fullpage({
+			var pepe = $('#fullpage').fullpage({
 				mouseScrolling: true,
 				anchors: ['home', 'about', 'ourteam', 'gallery', 'donate', 'contact'],
 				menu: '#cssmenu',
@@ -222,6 +222,7 @@
 				scrollOverflow:true,
 				css3:true,
 				navigation:true,
+				navigationTooltips:true,
 				
 				afterLoad: function(anchorLink, index){
 					
@@ -265,11 +266,14 @@
 }
 
 #section5 {
-	background-image: url(../images/binding_dark.png);
+	background-image: url(../images/stage.jpg);
+	background-size:contain;
+	background-repeat:no-repeat;
 }
 
+
 #section6 {
-	background-image: url(../images/binding_dark.png);
+
 }</style>
 
 
@@ -529,7 +533,7 @@ border: 0px;">
 	</div>
 	<div class="section sec-ourteam" id="section2">
 
-		<div  class="intro" id="sec-ourteam" style="margin-top:2%;margin-bottom:10%">
+		<div  class="intro" id="sec-ourteam" style="margin-top:2%;margin-bottom:10%;">
 		
 		<br><br><br><br>
 		<div id="grid-gallery" class="grid-gallery">
@@ -1061,8 +1065,11 @@ border: 0px;">
      <div class="section sec-donate" id="section4">
 
 		<div class="intro" id="sec-donate">
-			
-       <img class="plx" data-speed="1.0" data-t="20" data-b="50" data-n="80" id="donationimg" src="../images/Donations5.png" width="100%" style="position:absolute;margin-left:auto;margin-right:auto;width:100%">
+			<img  id="donateText" src="../images/donationsText.png" style="width:60%; height:auto;position:absolute;top:65px;margin-left:-30%; margin-bottom:100px">
+			<img class="plx" id="donatesilver" src="../images/silver.jpg" data-speed="1.0" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:-550px">
+			<img class="plx"id="donategold" src="../images/gold.jpg" data-speed="1.5" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:-150px">
+			<img class="plx" id="donateplatinum" src="../images/platinum.jpg" data-speed="2.0" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:250px">
+       <!--img class="plx" data-speed="1.0" data-t="20" data-b="50" data-n="80" id="donationimg" src="../images/Donations5.png" width="100%" style="position:absolute;margin-left:auto;margin-right:auto;width:100%">-->
         </div>
      </div>
      <div class="section sec-contact" id="section5">
@@ -1084,7 +1091,7 @@ border: 0px;">
 
                     
 				</p>
-				<img  class="plx rotate90" id="dandiyas" src="crossed.dandiyas.png" height="700px" width="250px" style="position:relative;z-index:4;bottom:50px" data-speed="2" data-t="100" data-b="0" data-n="-50">
+				<!--<img  class="plx rotate90" id="dandiyas" src="crossed.dandiyas.png" height="700px" width="250px" style="position:relative;z-index:4;bottom:50px" data-speed="2" data-t="100" data-b="0" data-n="-50">-->
 			</div>
 		</div>
 		

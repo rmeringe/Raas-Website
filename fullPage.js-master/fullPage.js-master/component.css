@@ -68,12 +68,12 @@
 	padding: 15px;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
-	-webkit-filter:grayscale(100%);
+	
 }
 
 .grid li:hover figure {
 	opacity:.7;
-	-webkit-filter:grayscale(0%);
+	
 }
 
 .grid figcaption {

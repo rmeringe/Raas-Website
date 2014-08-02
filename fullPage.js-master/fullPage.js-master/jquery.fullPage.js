@@ -266,6 +266,8 @@
 			dest = element.position();
 			console.log("Destionation",dest);
 			console.log("Element",element.data('anchor'));
+
+			/**
 			if (element.data('anchor')=="gallery"){
 				dest.top=2836;
 			}
@@ -274,7 +276,7 @@
 			}
 			if (element.data('anchor')=="contact"){
 				dest.top=4642;
-			}
+			}**/
 
 			dtop = dest != null ? dest.top : null;
 			

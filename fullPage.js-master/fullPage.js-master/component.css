@@ -61,6 +61,7 @@
 	width: 20%;
 	float: left;
 	cursor: pointer;
+	min-width:;
 }
 
 .grid figure {

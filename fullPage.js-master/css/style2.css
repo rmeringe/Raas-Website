@@ -32,6 +32,7 @@ a.more_link:hover{
 }
 h1, h2{
 	font-family:'Oswald', Arial, sans-serif;
+	text-align:left;
 }
 h1{
 	font-size:80px;
@@ -77,6 +78,7 @@ h1{
 	-moz-box-shadow:1px 1px 3px rgba(0,0,0,0.3);
 	-webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.3);
 	box-shadow:1px 1px 3px rgba(0,0,0,0.3);
+	text-align:left;
 }
 .fancy{
 	font-family:'Ovo', 'Georgia', Baskerville, "Hoefler Text", Garamond, serif;
@@ -111,6 +113,7 @@ p.subline{
 	background:#fff;
 	padding:20px;
 	width:260px;
+	text-align:left;
 }
 .block-small{
 	width:160px;
@@ -129,6 +132,17 @@ p.subline{
 	font-style:italic;
 	line-height:20px;
 	padding-bottom:5px;
+	width:auto;
+	margin:auto;
+	font-family: 'Georgia', 'Trebuchet MS', serif;
+font-size: 12px;
+	min-width:initial;
+	color:black;
+	display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
 }
 .block p.subline{
 	margin:10px 0px;

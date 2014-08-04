@@ -65,7 +65,6 @@
 	}
 	h2{
 		font-size: 40px;	
-		font-family: arial,helvetica;
 		color: #fff;
 		margin:0;
 		padding:0;
@@ -172,6 +171,9 @@
 	
 		<script type="text/javascript" src="jquery.masonry.min.js"></script>
 		<script type="text/javascript" src="jquery.gpCarousel.js"></script>
+
+		<link rel="stylesheet" href="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
+<script src="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js"></script>
 	
 	
 	
@@ -1103,6 +1105,10 @@ border: 0px;">
 
 		<div class="intro" id="sec-gallery">
 		<div class="container" id="container">
+		<div class="item header">
+				<h1><a href="/"><span>&hearts;</span> Print</a></h1>
+				<p class="subline">Business cards <span class="fancy">&amp;</span> more</p>
+			</div>
 			
 <div class="item block" data-bgimage="../images/1.jpg">
 				<div class="thumbs-wrapper">
@@ -1140,6 +1146,43 @@ border: 0px;">
 					<p>"How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position.</p>
 					<p>O my friend - but it is too much for my strength - I sink under the weight of the splendour of these visions!</p>
 					<p>A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.</p>
+				</div>
+			</div>
+			<div class="item block" data-bgimage="../images/4.jpg">
+				<div class="thumbs-wrapper">
+					<div class="thumbs">
+						<img src="../images/thumbs/4.jpg"/>
+						<img src="../images/thumbs/8.jpg"/>
+					</div>
+				</div>
+				<h2 class="title">Lovely Cards Project</h2>
+				<p class="subline">Concept, design <span class="fancy">&amp;</span> print</p>
+				<div class="intro">
+					<p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls. <a href="#" class="more_link">View project</a></p>
+				</div>
+				<div class="project-descr">
+					<p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream.</p>
+					<p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
+				</div>
+			</div>
+			<div class="item block" data-bgimage="../images/11.jpg">
+				<div class="thumbs-wrapper">
+					<div class="thumbs">
+						<img src="../images/thumbs/11.jpg"/>
+						<img src="../images/thumbs/12.jpg"/>
+						<img src="../images/thumbs/13.jpg"/>
+					</div>
+				</div>
+				<h2 class="title">Serenity Project</h2>
+				<p class="subline">Design <span class="fancy">&amp;</span> print</p>
+				<div class="intro">
+					<p>Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally <a href="#" class="more_link">View project</a></p>
+				</div>
+				<div class="project-descr">
+					<p>Drops of rain could be heard hitting the pane, which made him feel quite sad.</p>
+					<p>"How about if I sleep a little bit longer and forget all this nonsense", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position.</p>	
+					<p>The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked. "What's happened to me? " he thought. It wasn't a dream.</p>
+					<p>His room, a proper human room although a little too small, lay peacefully between its four familiar walls. A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.</p>
 				</div>
 			</div>
         </div>
@@ -1260,7 +1303,12 @@ border: 0px;">
 
 <script>
 	    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
+
 	    $(function(){
+	    	$("#danceStyle").mCustomScrollbar({
+	    		sedHeight:50
+	    	});
+	    	/**
     $('#grid-gallery').slimScroll({
         height: '800px',
         railVisible: true,
@@ -1276,9 +1324,10 @@ border: 0px;">
     	size:'10px',
     	color:'#333',
     	allowPageScroll:false
-    });
+    });**/
 });
 	</script>
+	
 <script type="text/javascript">
 			$(window).load(function(){
 				

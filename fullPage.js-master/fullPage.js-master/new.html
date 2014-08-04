@@ -169,7 +169,7 @@
 		<!-- the jScrollPane script -->
 		<script type="text/javascript" src="jquery.mousewheel.js"></script>
 	
-		<script type="text/javascript" src="jquery.masonry.min.js"></script>
+		
 		<script type="text/javascript" src="jquery.gpCarousel.js"></script>
 
 		<link rel="stylesheet" href="http://malihu.github.io/custom-scrollbar/jquery.mCustomScrollbar.min.css" />
@@ -196,7 +196,7 @@
 <!-------Experimental-->
 <script type="text/javascript">
 
-
+ 
 		$(function(){
 			$('.scroll-pane').jScrollPane({
 				autoReinitialise: true
@@ -212,6 +212,8 @@
     	 completeAnimation:"grow",
 
     	});
+			 $("#header").hide();
+			 $("footer").hide();
 			$(function(){
     $('#maximage').maximage({
     	        backgroundSize: "contain",
@@ -1113,14 +1115,15 @@ border: 0px;">
 <div class="item block" data-bgimage="../images/1.jpg">
 				<div class="thumbs-wrapper">
 					<div class="thumbs">
+					<a href="#" class="more_link">
 						<img src="../images/thumbs/1.jpg"/>
-						<img src="../images/thumbs/2.jpg"/>
+						</a>
 					</div>
 				</div>
 				<h2 class="title">Personal Works</h2>
 				<p class="subline">Concept <span class="fancy">&amp;</span> Design</p>
 				<div class="introa">
-					<p>I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. <a href="#" class="more_link">View project</a></p>
+					<p></p>
 				</div>
 				<div class="project-descr">
 					<p>O my friend - but it is too much for my strength - I sink under the weight of the splendour of these visions!</p>

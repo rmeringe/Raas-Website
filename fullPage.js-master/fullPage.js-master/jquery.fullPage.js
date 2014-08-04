@@ -315,6 +315,15 @@
 
 			activateMenuElement(anchorLink);
 			activateNavDots(anchorLink);
+
+			if(element.data('anchor')=="home"){
+				$("#header").slideUp(1500);
+				$("#footer").slideUp(1500);
+			}
+			else{
+				$("#header").slideDown(1500);
+				$("#footer").slideDown(1500);
+			}
 		}
 		
 		function scrollToAnchor(){

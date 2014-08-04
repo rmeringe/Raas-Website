@@ -434,6 +434,87 @@
 
 			destiny.addClass('active');
 		});
+		$('#dance').on('click', function() {
+			var slides = $("#section1").find('.slides');
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var currentSlide = slides.find('.slide.active');
+			console.log("currentslide", currentSlide.attr('id'));
+
+			if (currentSlide.attr("id")=="slide1"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			if ($(this).hasClass('prev')) {
+				destiny = currentSlide.prev('.slide');
+			} else {
+				destiny = currentSlide.next('.slide');
+			}
+
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+		});
+		$('#history').on('click', function() {
+			var slides = $("#section1").find('.slides');
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var currentSlide = slides.find('.slide.active');
+			console.log("currentslide", currentSlide.attr('id'));
+
+			if (currentSlide.attr("id")=="slide2"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			if ($(this).hasClass('prev')) {
+				destiny = currentSlide.prev('.slide');
+			} else {
+				destiny = currentSlide.next('.slide');
+			}
+
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+		});
+
 
 		if (!isTablet) {
 			var resizeId;

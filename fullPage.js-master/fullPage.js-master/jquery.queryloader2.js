@@ -904,6 +904,7 @@ function OverlayLoader(parent) {
 	this.container;
 	this.loadbar;
 	this.percentageContainer;
+	this.imageContainer;
 };
 
 OverlayLoader.prototype.createOverlay = function () {
@@ -932,6 +933,18 @@ OverlayLoader.prototype.createOverlay = function () {
 		top: 0,
 		left: 0
 	}).appendTo(this.parent.$element);
+	/**style='position:absolute;top:100px;left:0;right:0;margin-left:auto;margin-right:auto;**/
+
+
+	this.imageContainer = $("<div style='margin-left:-100px;' id='logo'><img style='width:100%' src='../images/headLogo.fw.png'/></div>").css({
+		left:"50%",
+		position: "absolute",
+		top:"20%",
+		width:"200px",
+
+
+	}).appendTo(this.container);
+	
 
 	//create the loading bar
 	this.loadbar = $("<div id='qLbar'></div>").css({

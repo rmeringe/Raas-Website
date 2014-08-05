@@ -101,10 +101,8 @@
 				slides.parent().wrap('<div class="slides" />');
 
 				$(this).find('.slidesContainer').css('width', sliderWidth + '%');
-				$(this).find('.slides').after('<div class="controlArrow prev"></div><div class="controlArrow next"></div>');
-				$('.controlArrow.next').css('border-color', 'transparent transparent transparent '+options.controlArrowColor);
-				$('.controlArrow.prev').css('border-color', 'transparent '+ options.controlArrowColor + ' transparent transparent');
-
+				$(this).find('.slides').after('<div style:"left:15px;background-image: url(lib/images/demo/arrow_left.png)"></div><div class="controlArrow next" src="lib/images/demo/arrow_right.png"></div>');
+				
 				
 				slides.each(function(index) {
 					if(!index){

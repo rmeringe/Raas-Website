@@ -171,6 +171,7 @@ ul.sdt_menu li div.sdt_box a:hover{
   font-size: 14px;
   font-weight: bold;
   padding: 15px 20px;
+  letter-spacing:4px;
   color: #7a8189;
   text-transform: uppercase;
   -webkit-transition: color 0.25s ease-out;

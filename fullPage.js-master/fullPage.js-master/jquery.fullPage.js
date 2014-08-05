@@ -258,7 +258,9 @@
 			//preventing from activating the MouseWheelHandler event
 			//more than once if the page is scrolling
 			isMoving = true;
-
+			var otherElem=$("#section3");
+			var winheight=$(window).height();
+			console.log("height",height);
 			if(typeof element.data('anchor') != 'undefined'){
 				location.hash = element.data('anchor');
 			}else{
@@ -280,25 +282,29 @@
 
 
 			dest = element.position();
-			console.log("Destionation",dest);
-			console.log("Element",element.data('anchor'));
 
-			/**
-			if (element.data('anchor')=="gallery"){
-				dest.top=2836;
-			}
+
+			
 			if (element.data('anchor')=="donate"){
-				dest.top=3739;
+				dest.top=otherElem.position().top+winheight-50;
+				console.log("gallery height",otherElem.position().top);
+				console.log("dest.top",dest.top);
 			}
+			
 			if (element.data('anchor')=="contact"){
-				dest.top=4642;
-			}**/
-
+				dest.top=otherElem.position().top+winheight+winheight-50;
+			}
+			
 			dtop = dest != null ? dest.top : null;
 			
 			var currentPage = element.data('anchor');
+			console.log("current Page:",currentPage,"LastScrolledDestiny",lastScrolledDestiny);
 			//call parallax site
+			
 			parallaxSite(currentPage, lastScrolledDestiny, dtop);
+		
+
+
 			
 			//
 			

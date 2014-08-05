@@ -23,17 +23,21 @@
 
 .grid-gallery figure {
 	margin: 0;
+	 filter: url(filters.svg#grayscale); /* Firefox 3.5+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(.7); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
 
 .grid-gallery figure img {
 	display: block;
 	width: 100%;
+	
 }
 
 .grid-gallery figcaption h3 {
 	margin: 0;
 	padding: 0 0 0.5em;
-	color:#3c0000 ;
+	color:#993737 ;
 	font-family:'Lato';
 	font-weight:bolder;
 	
@@ -72,20 +76,26 @@
 }
 
 .grid li:hover figure {
-	opacity:.7;
+	 filter: none;
+    -webkit-filter: grayscale(0%);
+    opacity:.9;
+	
+	
+      
 	
 }
 
 .grid figcaption {
 	background: #a8a8a8;
-	padding: 10px;
+	padding: 5px;
 	
 }
 
 #Big h3{ 
-	color: white;
-	bacground:#a8a8a8 !important;
+	color: #FFF0C9;
+	
 	padding:10px;
+
 }
 
 /* Slideshow style */
@@ -178,13 +188,15 @@
 .slideshow figcaption {
 	padding-bottom: 20px;
 	padding-top:20px;
-	background-color:#CC0000;
+	background-color:#FC4141;
 	text-align: center
+	width:100%;
+	color:#993737;
 	font-family:font-awesome;
 }
 
 .slideshow figcaption h3 {
-	font-weight: 300;
+	font-weight: bolder;
 	font-size: 200%;
 }
 

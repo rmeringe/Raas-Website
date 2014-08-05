@@ -170,6 +170,7 @@ ul.sdt_menu li div.sdt_box a:hover{
 #cssmenu > ul > li > a {
   font-size: 14px;
   font-weight: bold;
+  letter-spacing:4px;
   padding: 15px 20px;
   color: #7a8189;
   text-transform: uppercase;

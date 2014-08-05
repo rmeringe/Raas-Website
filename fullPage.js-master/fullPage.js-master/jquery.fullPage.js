@@ -32,6 +32,8 @@
 			'afterLoad': null
 		}, options);
 
+
+
 		var isTablet = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/); 
 
 		var windowsWidtdh = $(window).width();
@@ -101,9 +103,8 @@
 				slides.parent().wrap('<div class="slides" />');
 
 				$(this).find('.slidesContainer').css('width', sliderWidth + '%');
-				$(this).find('.slides').after('<div class="controlArrow prev"></div><div class="controlArrow next"></div>');
-				$('.controlArrow.next').css('border-color', 'transparent transparent transparent '+options.controlArrowColor);
-				$('.controlArrow.prev').css('border-color', 'transparent '+ options.controlArrowColor + ' transparent transparent');
+				$(this).find('.slides').after('<div class="controlArrow prev"><img src="lib/images/demo/arrow_left.png"/></div><div class="controlArrow next"><img src="lib/images/demo/arrow_right.png"/></div>');
+				
 
 				
 				slides.each(function(index) {
@@ -236,6 +237,7 @@
 		}
 		
 		$.fn.fullpage.moveToSlide = function (index){
+			console.log("Gets called");
 			var destiny = '';
 			
 			if(isNaN(index)){
@@ -262,7 +264,21 @@
 			}else{
 				location.hash = '';
 			}
-			
+
+			 console.log("Gets to scroller");
+	    	var height=$(window).height();
+	    	height=height-(.08*height)-70-350;
+	    	$("#danceStyle").mCustomScrollbar({
+	    		setHeight:height
+	    	});
+	    	$("#grid-gallery").mCustomScrollbar({
+	    		setHeight:800
+	    	});
+	    	$("#aboutHistory").mCustomScrollbar({
+	    		setHeight:600
+	    	});
+
+
 			dest = element.position();
 			console.log("Destionation",dest);
 			console.log("Element",element.data('anchor'));
@@ -345,6 +361,7 @@
 		//detecting any change on the URL to scroll to the given anchor link
 		//(a way to detect back history button as we play with the hashes on the URL)
 		$(window).on('hashchange',function(){
+			console.log("Gets called")
 			var value =  window.location.hash.replace('#', '');
 			
 			/*in order to call scrollpage() only once for each destination at a time
@@ -514,6 +531,202 @@
 
 			destiny.addClass('active');}
 		});
+		$('#inTouch').on('click', function() {
+			var slides = $("#section5").find('.slides');
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var currentSlide = slides.find('.slide.active');
+			console.log("currentslide", currentSlide.attr('id'));
+
+			if (currentSlide.attr("id")=="slide2"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			
+			destiny=currentSlide.prev('.slide');
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+			else if (currentSlide.attr("id")=="slide3"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			destiny=currentSlide.next('.slide');
+
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+		});
+$('#costumeRental').on('click', function() {
+			var slides = $("#section5").find('.slides');
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var currentSlide = slides.find('.slide.active');
+			console.log("currentslide", currentSlide.attr('id'));
+
+			if (currentSlide.attr("id")=="slide1"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			
+			destiny=currentSlide.next('.slide');
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+			else if (currentSlide.attr("id")=="slide3"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			destiny=currentSlide.prev('.slide');
+
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+		});
+$('#contactForm').on('click', function() {
+			var slides = $("#section5").find('.slides');
+			var slidesContainer = slides.find('.slidesContainer').parent();
+			var currentSlide = slides.find('.slide.active');
+			console.log("currentslide", currentSlide.attr('id'));
+
+			if (currentSlide.attr("id")=="slide1"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			
+			destiny=currentSlide.next('.slide');
+			destiny=destiny.next('.slide');
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('next')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+			else if (currentSlide.attr("id")=="slide2"){
+			var destiny = null;
+			var destinyPos = 0;
+
+			currentSlide.removeClass('active');
+
+			destiny=currentSlide.next('.slide');
+
+			//is there a next slide in the secuence?
+			if (destiny.length > 0) {
+				destinyPos = destiny.position();
+			}
+
+			//to the last
+			else {
+				if ($(this).hasClass('prev')) {
+					destiny = currentSlide.siblings(':last');
+				} else {
+					destiny = currentSlide.siblings(':first');
+				}
+
+				destinyPos = destiny.position();
+			}
+
+			slidesContainer.animate({
+				scrollLeft : destinyPos.left
+			}, 500);
+
+			destiny.addClass('active');}
+		});
 
 
 		if (!isTablet) {
@@ -646,3 +859,4 @@
 
 
 })(jQuery);
+

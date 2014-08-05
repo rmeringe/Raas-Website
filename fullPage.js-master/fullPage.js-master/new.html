@@ -62,6 +62,7 @@
 	}
 	.intro h1{
 		color: #fff;
+		text-align:center;
 	}
 	h2{
 		font-size: 40px;	
@@ -210,8 +211,13 @@
     	{
     		minimumTime:2000,
     	 completeAnimation:"grow",
+    	 backgroundColor:"#CC0000"
 
     	});
+
+	    	
+   
+
 			 $("#header").hide();
 			 $("#footer").hide();
 			$(function(){
@@ -247,6 +253,8 @@
 				navigationTooltips:true,
 				
 				afterLoad: function(anchorLink, index){
+					
+					
 					
 					if(index == 'about'){
 						console.log("Section boombox ended loading");
@@ -313,7 +321,7 @@
 	background-image: url(../images/binding_dark.png);
 }
 #section5{
-	background-image: url(../images/stage.jpg);
+	background-image: url(../images/Optimized-stage.jpg);
 	background-size:cover;
 }
 
@@ -352,7 +360,7 @@
 	<style>
 	
 	                body{
-	                    color:green;
+	                    color:white;
 	                    font-family:Arial;
 	                    
 	                }
@@ -409,7 +417,20 @@
 	   <li><a href='#ourteam'><span>Our Team</span></a></li>
 	   <li><a href='#gallery'><span>Gallery</span></a></li>
 	   <li><a href='#donate'><span>Donate</span></a></li>
-	   <li class='last'><a href='#contact'><span>Contact</span></a></li>
+	   <li class='last has-sub'><a href='#contact' ><span>Contact</span></a>
+ <ul>
+ 			<li id="inTouch" class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Get in Touch</span></a>
+	
+	         </li>
+	         <li id="costumeRental"class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Costume Rental</span></a>
+	
+	         </li>
+	         <li id="contactForm" class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Contact Us</span></a>
+	   
+	         </li>
+	      </ul>
+
+	   </li>
 	</ul>
 	</div>
 	<hr style="bottom:0px;width:100%;height:5px;background-color:#CC0000;z-index:99999;margin-top: 0px;
@@ -555,14 +576,18 @@ border: 0px;">
 	    <div class="slide" id="slide2">
 	    <div class="intro" id="sec-about">
 	    
-			<h1 style="font-family:Lato"> Dance Style</h1>
-			<br><br><br><br><br><br><br><br><br><br>
-			<div id="danceStyle">
+			<h1 style="font-family:Lato;margin-bottom:10px"> Dance Style</h1>
+
+			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;right:27%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas" height="200px" width="350px"/> </div>
+			<div id="garba" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;right:10%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/garba.jpg" alt="Raas" height="200px" width="350px"/> </div>
+			
+			<div id="danceStyle" style="margin-top:275px;margin-bottom:200px">
 			<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br>
                  <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
                 The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br>
                 <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br>
-                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p></div>
+                <p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p> <br><br><br></div>
+                
 		</div>
 
 	</div>
@@ -1193,9 +1218,9 @@ border: 0px;">
 	    <div class="slide" id="slide1">
 			<div class="intro" id="sec-contact">
 			
-				<h1>Get in Touch!</h1>
+				<h1 style="margin-top:30%;font-family:Lato">Get in Touch!</h1>
 				<br><br>
-				<p>
+				<p style="line-height:1.7;font-family:Lato">
 					Having a special day? Whether it is an engagement, cultural show or a sweet 16, we are more than happy to bring our talents to your stage. Hire us for a vibrant dance performance for your event! Although we focus on garba-raas, we have talented dancers trained in Bollywood, Classical, and various forms of folk dance! We are more than happy to work with your schedule and logistics. Just get it touch with us to get the process started!
 					<style>
 					.rotate90 {
@@ -1215,9 +1240,9 @@ border: 0px;">
 	    <div class="slide" id="slide2">
 	    <div class="intro" id="sec-contact">
 	    
-			<h1>Interested In Costume Rental?</h1>
+			<h1 style="margin-top:30%;font-family:Lato">Interested In Costume Rental?</h1>
 			<br><br>
-			<p>Interested in renting our costumes for a special event or performance? Shoot us an email below and we can get back to you with pricing, logistics and more photos!</p><br><br><br><br>
+			<p style="font-family:Lato;line-height:1.7">Interested in renting our costumes for a special event or performance? Shoot us an email below and we can get back to you with pricing, logistics and more photos!</p><br><br><br><br>
                 
 		</div>
 		</div>
@@ -1228,8 +1253,8 @@ border: 0px;">
          <!-- Contacts -->
          <div id="contacts">
            <div class="row">  
-           <h1>
-            Feel free to contact us below!</h1>     
+           <h1 style="margin-top:30%;font-family:Lato">
+            Contact Us Below!</h1>     
             <br><br><br><br>
              <!-- Alignment -->
              <div class="contactCenter">
@@ -1295,19 +1320,7 @@ border: 0px;">
 <script>
 	    new CBPGridGallery( document.getElementById( 'grid-gallery' ) );
 
-	    $(function(){
-	    	$("#danceStyle").mCustomScrollbar({
-	    		setHeight:500
-	    	});
-	    	$("#grid-gallery").mCustomScrollbar({
-	    		setHeight:800
-	    	});
-	    	$("#aboutHistory").mCustomScrollbar({
-	    		setHeight:600
-	    	});
-	    	
-   
-});
+	   
 	</script>
 	
 <script type="text/javascript">

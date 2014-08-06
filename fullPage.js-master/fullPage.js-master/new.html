@@ -260,7 +260,7 @@
     			scrollOverflow:true,
     			css3:true,
     			navigation:true,
-    			navigationTooltips:true,
+    			navigationTooltips:['Home', 'About', 'Team', 'Gallery', 'Donate', 'Contact'],
 
     			afterLoad: function(anchorLink, index){
 
@@ -1719,11 +1719,7 @@
 										start	: $article.find('div.thumbs-wrapper').data('currentImage')
 									});
 									
-									//jscrollpane
-									$fullview_content.find('div.project-descr-full-wrapper').jScrollPane('destroy').jScrollPane({
-										verticalDragMinHeight: 40,
-										verticalDragMaxHeight: 40
-									});
+									
 									
 									// center bg image
 									centerBgImage( $fullview.find('img.bg-img') );

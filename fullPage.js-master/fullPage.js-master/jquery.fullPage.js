@@ -16,18 +16,20 @@
 			"verticalCentered" : true,
 			'resize' : true,
 			'slidesColor' : [],
-			'anchors':[],
+			'anchors':["Home","About","Team", "Gallery","Donate","Contact"],
 			'scrollingSpeed': 3000,
 			'easing': 'easeInQuart',
 			'menu': false,
 			'navigation': true,
-			'navigationPosition': 'right',
-			'navigationColor': 'white',
+			'navigationPosition': 'left',
+			'navigationColor': 'yellow',
 			'controlArrowColor': '#fff',
+			'slidesNavigation': true,
 			'loopBottom': false,
 			'loopTop': false,
 			'touchScrolling': true,
 			'mouseScrolling': true,
+			'navigationTooltips': ["Home","About","Team", "Gallery","Donate","Contact"],
 			//events
 			'afterLoad': null
 		}, options);
@@ -59,7 +61,7 @@
 		
 		//creating the navigation dots 
 		if(options.navigation){
-			$('#superContainer').append('<div id="fullPage-nav"><ul></ul></div>');	
+			$('#fullpage').prepend('<div id="fullPage-nav"><ul></ul></div>');	
 			var nav = $('#fullPage-nav');
 
 			nav.css('color', options.navigationColor);
@@ -67,7 +69,9 @@
 	
 			if(options.navigationPosition == 'right'){
 				nav.css('right', '17px');
+				nav.css('top', '20%')
 			}else{
+				nav.css('top', '20%')
 				nav.css('left', '17px');
 			}
 		}
@@ -91,8 +95,17 @@
 			}
 			
 			if(options.navigation){
-				$('#fullPage-nav').find('ul').append('<li><a href="#' + options.anchors[index] + '"><span></span></a></li>')
+				var link = '';
+				if(options.anchors.length){
+					link = options.anchors[index];
+				}
+				var tooltip = options.navigationTooltips[index];
+				console.log("navaigation", options.navigationTooltips);
+				
+
+				nav.find('ul').append('<li data-tooltip="' + tooltip + '"><a href="#' + link + '"><span></span></a></li>');
 			}
+				
 
 			// if there's any slide
 			if (numSlides > 0) {
@@ -105,7 +118,9 @@
 				$(this).find('.slidesContainer').css('width', sliderWidth + '%');
 				$(this).find('.slides').after('<div class="controlArrow prev"><img src="lib/images/demo/arrow_left.png"/></div><div class="controlArrow next"><img src="lib/images/demo/arrow_right.png"/></div>');
 				
-
+				if(options.slidesNavigation){
+					addSlidesNavigation($(this), numSlides);
+				}
 				
 				slides.each(function(index) {
 					if(!index){
@@ -172,6 +187,26 @@
 			}else{
 				sq.attachEvent("onmousewheel", MouseWheelHandler());
 			}
+		}
+
+		/**
+		* Creates a landscape navigation bar with dots for horizontal sliders.
+		*/
+		function addSlidesNavigation(section, numSlides){
+			section.append('<div class="fullPage-slidesNav"><ul></ul></div>');
+			var nav = section.find('.fullPage-slidesNav');
+
+			//top or bottom
+			nav.addClass(options.slidesNavPosition);
+
+			for(var i=0; i< numSlides; i++){
+				nav.find('ul').append('<li><a href="#"><span></span></a></li>');
+			}
+
+			//centering it
+			nav.css('margin-left', '-' + (nav.width()/2) + 'px');
+
+			nav.find('li').first().find('a').addClass('active');
 		}
 
 		function MouseWheelHandler() {
@@ -261,6 +296,7 @@
 
 	    	var height=$(window).height();
 	    	height=height-(.08*height)-70-350;
+
 	    	$("#danceStyle").mCustomScrollbar({
 	    		setHeight:400
 	    	});
@@ -329,12 +365,12 @@
 			activateNavDots(anchorLink);
 
 			if(element.data('anchor')=="home"){
-				$("#header").slideUp(1500);
-				$("#footer").slideUp(1500);
+				$("#header").slideUp(400);
+				$("#footer").slideUp(400);
 			}
 			else{
-				$("#header").slideDown(1500);
-				$("#footer").slideDown(1500);
+				$("#header").slideDown(400);
+				$("#footer").slideDown(400);
 			}
 		}
 		

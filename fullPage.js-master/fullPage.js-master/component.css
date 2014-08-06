@@ -23,8 +23,8 @@
 
 .grid-gallery figure {
 	margin: 0;
-	 
-    filter: gray; /* IE6-9 */
+	 /**
+    filter: gray; /* IE6-9 
     -webkit-filter: grayscale(.7); /* Google Chrome, Safari 6+ & Opera 15+ */
 }
 
@@ -76,8 +76,9 @@
 }
 
 .grid li:hover figure {
+	/**
 	 filter: none;
-    -webkit-filter: grayscale(0%);
+    -webkit-filter: grayscale(0%);**/
     opacity:.9;
 	
 	

@@ -17,7 +17,7 @@
 			'resize' : true,
 			'slidesColor' : [],
 			'anchors':[],
-			'scrollingSpeed': 100,
+			'scrollingSpeed': 3000,
 			'easing': 'easeInQuart',
 			'menu': false,
 			'navigation': true,
@@ -59,7 +59,7 @@
 		
 		//creating the navigation dots 
 		if(options.navigation){
-			$('#fullpage').append('<div id="fullPage-nav"><ul></ul></div>');	
+			$('#superContainer').append('<div id="fullPage-nav"><ul></ul></div>');	
 			var nav = $('#fullPage-nav');
 
 			nav.css('color', options.navigationColor);
@@ -166,13 +166,10 @@
 		if(options.mouseScrolling){
 			var sq = {};
 			sq = document;
-		console.log("How about now");
 			if (sq.addEventListener){
-				console.log("Goes here instead");
 				sq.addEventListener("mousewheel", MouseWheelHandler(), false);
 				sq.addEventListener("DOMMouseScroll", MouseWheelHandler(), false);
 			}else{
-				console.log("adds mouse wheel handler");
 				sq.attachEvent("onmousewheel", MouseWheelHandler());
 			}
 		}
@@ -220,10 +217,7 @@
 		}
 
 		$.fn.fullpage.moveSlideDown = function (){
-			console.log("moves slide down");
-			console.log("current",$('.section.active'));
 			var next = $('.section.active').next('.section');
-			console.log("next",next);
 			//looping to the top if there's no more sections below
 			if(options.loopBottom && !next.length){
 				next = $('.section').first();
@@ -237,7 +231,6 @@
 		}
 		
 		$.fn.fullpage.moveToSlide = function (index){
-			console.log("Gets called");
 			var destiny = '';
 			
 			if(isNaN(index)){
@@ -260,14 +253,12 @@
 			isMoving = true;
 			var otherElem=$("#section3");
 			var winheight=$(window).height();
-			console.log("height",height);
 			if(typeof element.data('anchor') != 'undefined'){
 				location.hash = element.data('anchor');
 			}else{
 				location.hash = '';
 			}
 
-			 console.log("Gets to scroller");
 	    	var height=$(window).height();
 	    	height=height-(.08*height)-70-350;
 	    	$("#danceStyle").mCustomScrollbar({
@@ -287,8 +278,7 @@
 			
 			if (element.data('anchor')=="donate"){
 				dest.top=otherElem.position().top+winheight-50;
-				console.log("gallery height",otherElem.position().top);
-				console.log("dest.top",dest.top);
+
 			}
 			
 			if (element.data('anchor')=="contact"){
@@ -298,7 +288,7 @@
 			dtop = dest != null ? dest.top : null;
 			
 			var currentPage = element.data('anchor');
-			console.log("current Page:",currentPage,"LastScrolledDestiny",lastScrolledDestiny);
+		
 			//call parallax site
 			
 			parallaxSite(currentPage, lastScrolledDestiny, dtop);
@@ -309,7 +299,7 @@
 			//
 			
 
-			TweenMax.to([$('#superContainer')], 1.5, {top : -dtop, ease:Power1.easeOut, onComplete:function(){
+			TweenMax.to([$('#superContainer')], .7, {top : -dtop, ease:SteppedEase.easeIn, onComplete:function(){
 					//callback
 					$.isFunction( options.afterLoad ) && options.afterLoad.call( this, anchorLink, (element.index('.section') + 1));
 					setTimeout(function(){ isMoving = false;}, 700);
@@ -367,7 +357,7 @@
 		//detecting any change on the URL to scroll to the given anchor link
 		//(a way to detect back history button as we play with the hashes on the URL)
 		$(window).on('hashchange',function(){
-			console.log("Gets called")
+			
 			var value =  window.location.hash.replace('#', '');
 			
 			/*in order to call scrollpage() only once for each destination at a time
@@ -461,7 +451,7 @@
 			var slides = $("#section1").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
-			console.log("currentslide", currentSlide.attr('id'));
+			
 
 			if (currentSlide.attr("id")=="slide1"){
 			var destiny = null;
@@ -501,7 +491,7 @@
 			var slides = $("#section1").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
-			console.log("currentslide", currentSlide.attr('id'));
+			
 
 			if (currentSlide.attr("id")=="slide2"){
 			var destiny = null;
@@ -541,7 +531,7 @@
 			var slides = $("#section5").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
-			console.log("currentslide", currentSlide.attr('id'));
+		
 
 			if (currentSlide.attr("id")=="slide2"){
 			var destiny = null;
@@ -606,7 +596,7 @@ $('#costumeRental').on('click', function() {
 			var slides = $("#section5").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
-			console.log("currentslide", currentSlide.attr('id'));
+			
 
 			if (currentSlide.attr("id")=="slide1"){
 			var destiny = null;
@@ -671,7 +661,7 @@ $('#contactForm').on('click', function() {
 			var slides = $("#section5").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
-			console.log("currentslide", currentSlide.attr('id'));
+			
 
 			if (currentSlide.attr("id")=="slide1"){
 			var destiny = null;

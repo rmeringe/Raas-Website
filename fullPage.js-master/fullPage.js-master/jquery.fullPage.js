@@ -271,7 +271,7 @@
 	    	var height=$(window).height();
 	    	height=height-(.08*height)-70-350;
 	    	$("#danceStyle").mCustomScrollbar({
-	    		setHeight:height
+	    		setHeight:400
 	    	});
 	    	$("#grid-gallery").mCustomScrollbar({
 	    		setHeight:800

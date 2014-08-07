@@ -90,7 +90,7 @@
 	* --------------------------------------- */
 	#header, #footer{
 		position:fixed;
-		
+		height:60px;
 		display:block;
 		width: 100%;
 		background:linear-gradient(
@@ -102,6 +102,7 @@
 		text-align:center;
 		color: #f2f2f2;
 		padding: 10px 0 0px 0;
+		-webkit-backface-visibility: hidden;
 	}
 	
 
@@ -227,9 +228,17 @@
 
 
 
+$('#header').css({
+  'visibility': "hidden",
+  'opacity': 0,
+  'transition': "visibility 0s 1s, opacity 1s linear"
+});
+				$('#footer').css({
+  'visibility': "hidden",
+  'opacity': 0,
+  'transition': "visibility 0s 1s, opacity 1s linear"
+});
 
-    		$("#header").hide();
-    		$("#footer").hide();
     		$(function(){
     			$('#maximage').maximage({
     				backgroundSize: "contain",
@@ -317,6 +326,7 @@
 	background-size:cover;
 	background-repeat:no-repeat;*/
 	background-image: url(../images/binding_dark.png);
+
 
 }
 
@@ -580,15 +590,15 @@
 
 	<div class="slide" id="slide1">
 		<div class="intro" height=100% id="sec-about">
-			<h1 style="font-family:Lato">Team History </h1>
-			<br><br><br><br>
+			<h1 style="font-family:Lato;margin-bottom:5%">Team History </h1>
+			
 			<div id="aboutHistory">
 				<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
 					CMU Raasta began with the vision of three people to bring a South Asian cultural phenomenon to Carnegie Mellon University. Since 2012, CMU Raasta has been committed to promoting Indian culture across campus by performing on and off campus at dance competitions throughout the nation. We are a team of 16 boys and girls who aspire to compete at the national championship - Raas All Stars - amongst the seven best teams across the nation.  By exhibiting the talent and diversity of Carnegie Mellon students, we aim to spread the awareness of Gujarati traditions through the West Indian folk dance Garba-Raas. 
 				</p>
 				<br><br>
 				<p class="plx" data-speed="1.0" data-t="0" data-b="80" id="tasdf" style="font-family:Lato;line-height:1.5;color:white"> 
-					Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.
+					Please come support us at our local and national events every year! We perform not only on the  campus but also at national-level competitions along with private parties such as weddings, receptions, etc.<br><br><br>
 				</p>
 
 			</div>
@@ -600,7 +610,7 @@
 
 			<h1 style="font-family:Lato;margin-bottom:10px"> Dance Style</h1>
 
-			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:57.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas" height="200px" width="350px"/> </div>
+			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:57.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas" style="position:absolute" height="200px" width="350px"/> </div>
 			<div id="garba" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:77.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/garba.jpg" alt="Raas" height="200px" width="350px"/> </div>
 			
 			<div id="danceStyle" style="margin-top:275px;margin-bottom:200px">
@@ -807,7 +817,7 @@
 								</figure>
 							</li>
 							<li>
-								<                <figure>
+								              <figure>
 								<div style="width:65%;float:left">
 
 

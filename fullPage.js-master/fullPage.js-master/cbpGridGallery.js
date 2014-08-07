@@ -108,6 +108,7 @@
 		// open the slideshow when clicking on the main grid items
 		this.gridItems.forEach( function( item, idx ) {
 			item.addEventListener( 'click', function() {
+				console.log("adds slideshow event listener");
 				self._openSlideshow( idx );
 			} );
 		} );
@@ -152,6 +153,7 @@
 
 	CBPGridGallery.prototype._openSlideshow = function( pos ) {
 		this.isSlideshowVisible = true;
+		console.log("Open slideshow called",pos)
 		this.current = pos;
 
 		classie.addClass( this.el, 'slideshow-open' );

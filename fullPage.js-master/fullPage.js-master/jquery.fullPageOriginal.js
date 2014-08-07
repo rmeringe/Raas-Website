@@ -14,13 +14,14 @@
 			'resize': true,
 			'slidesColor' : [],
 			'anchors':[],
-			'scrollingSpeed': 700,
+			'scrollingSpeed': 400,
 			'easing': 'easeInQuart',
-			'menu': false,
+			'menu': '#header',
 			'navigation': false,
 			'navigationPosition': 'right',
 			'navigationColor': '#000',
 			'navigationTooltips': [],
+			'normalScrollElements':['#danceStyle','#grid-gallery','#aboutHistory'],
 			'slidesNavigation': false,
 			'slidesNavPosition': 'bottom',
 			'controlArrowColor': '#fff',
@@ -59,10 +60,19 @@
 		//Defines the delay to take place before being able to scroll to the next section
 		//BE CAREFUL! Not recommened to change it under 400 for a good behavior in laptops and
 		//Apple devices (laptops, mouses...)
-		var scrollDelay = 600;
+		var scrollDelay = 200;
 
 		$.fn.fullpage.setAutoScrolling = function(value){
 			options.autoScrolling = value;
+			$("#danceStyle").mCustomScrollbar({
+	    		setHeight:400
+	    	});
+	    	$("#grid-gallery").mCustomScrollbar({
+	    		setHeight:800
+	    	});
+	    	$("#aboutHistory").mCustomScrollbar({
+	    		setHeight:600
+	    	});
 
 			var element = $('.section.active');
 
@@ -665,6 +675,25 @@
 			var activeSlide = element.find('.slide.active');
 			var activeSection = $('.section.active');
 			var leavingSection = activeSection.index('.section') + 1;
+			console.log("Anchor", element.data('anchor'));
+			if(element.data('anchor')=="home"){
+				$("#header").slideUp(400);
+				$("#footer").slideUp(400);
+			}
+			else{
+				$("#header").slideDown(400);
+				$("#footer").slideDown(400);
+			}
+
+	    	$("#danceStyle").mCustomScrollbar({
+	    		setHeight:400
+	    	});
+	    	$("#grid-gallery").mCustomScrollbar({
+	    		setHeight:800
+	    	});
+	    	$("#aboutHistory").mCustomScrollbar({
+	    		setHeight:600
+	    	});
 
 			//caching the value of isResizing at the momment the function is called
 			//because it will be checked later inside a setTimeout and the value might change
@@ -1151,6 +1180,7 @@
 		 */
 		function activateMenuElement(name){
 			if(options.menu){
+				console.log("There is an option.menu");
 				$(options.menu).find('.active').removeClass('active');
 				$(options.menu).find('[data-menuanchor="'+name+'"]').addClass('active');
 			}

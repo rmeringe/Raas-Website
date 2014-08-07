@@ -1,23 +1,6 @@
 // Parallax Elements
 var arr = ['home', 'about', 'ourteam', 'gallery', 'donate', 'contact'];
-/**
-var arrImg = [
-'images/menu/btnHome.png', 
-'images/menu/btnBoombox.png', 
-'images/menu/btnLineup.png', 
-'images/menu/btnEntradas.png', 
-'images/menu/btnAccesovip.png', 
-'images/menu/btnCasting.png', 
-'images/menu/btnNovedades.png'];
 
-var arrImgHover = [
-'images/menu/btnHome-over.png', 
-'images/menu/btnBoombox-over.png', 
-'images/menu/btnLineup-over.png', 
-'images/menu/btnEntradas-over.png', 
-'images/menu/btnAccesovip-over.png', 
-'images/menu/btnCasting-over.png', 
-'images/menu/btnNovedades-over.png'];**/
 
 function parallaxSite(cPage, oPage, dtop){
 	console.log(cPage+" - "+oPage+" - "+dtop);
@@ -63,7 +46,7 @@ function moveElements(cPage){
 			element = $("#sec-"+arr[prevPos]+" .plx#"+idImg);
 			
 			//
-			TweenMax.to([element], $(this).attr("data-speed"),{css:{top: $(this).attr("data-t")+"%"}, ease:Power1.easeOut});
+			TweenLite.to([element], $(this).attr("data-speed"),{css:{top: $(this).attr("data-t")+"%"}, ease:Power1.easeOut});
 		});
 	}
 	

@@ -36,7 +36,13 @@
 		}, options);
 
 
-
+		var isOpera = !!window.opera || navigator.userAgent.indexOf(' OPR/') >= 0;
+    // Opera 8.0+ (UA detection to detect Blink/v8-powered Opera)
+var isFirefox = typeof InstallTrigger !== 'undefined';   // Firefox 1.0+
+var isSafari = Object.prototype.toString.call(window.HTMLElement).indexOf('Constructor') > 0;
+    // At least Safari 3+: "[object HTMLElementConstructor]"
+var isChrome = !!window.chrome && !isOpera;              // Chrome 1+
+var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 		var isTablet = navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/); 
 
 		var windowsWidtdh = $(window).width();
@@ -335,8 +341,8 @@
 			dest = element.position();
 
 
-			
-			if (element.data('anchor')=="ourteam"){
+			/** IE and Safari incompatability with google grid**/
+			if ((element.data('anchor')=="ourteam") && (isFirefox || isChrome)) {
 				console.log("Its gallery");
 				$(".slideshow").css({"top":dest.top})
 
@@ -357,8 +363,9 @@
 			var translate3d = 'translate3d(0px, -' + dtop + 'px, 0px)';
 			transformContainer(translate3d, true);
 			//callback
+					console.log("animation started");
 					$.isFunction( options.afterLoad ) && options.afterLoad.call( this, anchorLink, (element.index('.section') + 1));
-					setTimeout(function(){ isMoving = false;}, 700);
+					setTimeout(function(){ isMoving=false; console.log("Animation finished");}, 1200);
 				
 		
 			/**

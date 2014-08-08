@@ -2,26 +2,35 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+
+<style type="text/css">
+      .js #flash {display: none;}
+    </style>
+		<script type="text/javascript">
+    document.documentElement.className='js';
+  </script>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />	
-	<title>FullScreen Backgrounds - fullPage.js</title>
+	<title>CMU Raasta</title>
 	<meta name="author" content="Alvaro Trigo Lopez" />
 	<meta name="description" content="fullPage fixed header and footer." />
 	<meta name="keywords"  content="fullpage,jquery,demo,screen,fixed, header,footer, absolute, positioned,css" />
 	<meta name="Resource-type" content="Document" />
 
-	
+	<link rel="stylesheet" href="lib/css/jquery.maximage.css" type="text/css" media="screen" title="CSS" charset="utf-8" />
+	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
 	<link href="../css/jquery.galereya.css" rel="stylesheet"/>
 	
-	<link rel="stylesheet" type="text/css" href="jquery.fullPage.css" />
+	
 	<link rel="stylesheet" type="text/css" href="examples.css" />
 	<link href="../css/skitter.styles.css" type="text/css" media="all" rel="stylesheet" />
 	<link href="../css/style.css" type="text/css" media="all" rel="stylesheet" />
-	<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.css" rel="stylesheet"> 
-	<link rel="stylesheet" href="lib/css/jquery.maximage.css" type="text/css" media="screen" title="CSS" charset="utf-8" />
+	
+	
 	<link rel="stylesheet" type="text/css" href="demo.css" />
 	<link rel="stylesheet" type="text/css" href="component.css" />
 	<link href='http://fonts.googleapis.com/css?family=PT+Sans+Caption:400,700' rel='stylesheet' type='text/css'>
-	<script src="modernizr.custom.js"></script>
+	
 
 	<!-- 3 KB -->
 	<link href="../fonts/font.css" rel="stylesheet">
@@ -47,6 +56,8 @@
 			url('../fonts/33535gillsansmt.woff') format('woff'), 
 			url('../fonts/33535gillsansmt.ttf') format('truetype');
 		}
+
+
 	</style>
 	
 	<style>
@@ -59,6 +70,7 @@
 		color: #fff;
 		margin:0;
 		padding:0;
+		letter-spacing:6px;
 	}
 	.intro h1{
 		color: #fff;
@@ -135,10 +147,7 @@
 		color: #fff;
 		z-index: 999;
 	}
-	
-	#left {  float:left; display:block;  margin-left:20px; margin-right:20px; padding:0; width:200px;  height:auto;  };
-	#middle{   display:inline-block;  float:left; margin-left:20px; padding-left:20px; width:50%;  height:50px; overflow:hidden;};
-	#right { float:right; display:inline-block; margin-left:200px; padding:0; width:2px; height:250px; background:#ccc; };
+
 
 
 </style>
@@ -148,8 +157,11 @@
 			 var console = { log: function() {} };
 		</script>
 		<![endif]-->
+		<script src="modernizr.custom.js"></script>
 		<script src="console.fix.min.js"></script>
 		<script src="jquery-1.11.1.js"></script>
+
+		<script src="jquery.queryloader2.js" type="text/javascript"></script>
 	<!--
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>-->
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
@@ -165,7 +177,7 @@
 	<script type="text/javascript" src="jquery.fullPage.js"></script>
 	
 	<script src="main.min.js"></script>		
-	<script src="jquery.queryloader2.js" type="text/javascript"></script>
+	
 	<script src="lib/js/jquery.cycle.all.js" type="text/javascript"></script>
 	<script src="lib/js/jquery.maximage.min.js" type="text/javascript"></script>
 	<script src="imagesloaded.pkgd.min.js"></script>
@@ -189,20 +201,9 @@
 	
 	
 	
-<!--not needed
-	
 
-
-
-	<script type="text/javascript" src="../js/jquery.galereya.min.js"></script>
-	
-	<script type="text/javascript" src="examples.js"></script>
-
-
-    <script src="../js/bootstrap.js"></script>
-   
     
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.5.1/fotorama.js"></script> <!-- 16 KB -->
+    <!-- 16 KB -->
     
 
     <!-------Experimental-->
@@ -225,6 +226,7 @@
     			backgroundColor:"#CC0000"
 
     		});
+
 
 
 
@@ -343,7 +345,7 @@ $('#header').css({
 	background-image: url(../images/binding_dark.png);
 }
 #section5{
-	background-image: url(../images/Optimized-stage.jpg);
+	background-image: url(../images/stage-bg-compressed.jpg);
 	background-size:cover;
 }
 
@@ -417,7 +419,7 @@ $('#header').css({
 
 
 </style>
-<link href='http://fonts.googleapis.com/css?family=Abril+Fatface' rel='stylesheet' type='text/css'>
+
 </head>
 <body >
 
@@ -558,11 +560,12 @@ $('#header').css({
     <div id="maximage">
     	<div class="first-item">
     		<img src="images/about.jpg" alt="" />
+    		<!--
     		<img id="gradient" src="lib/images/demo/gradient.png" alt="" />
     		<div class="in-slide-content">
     			<p>Remember, you are not limited to image elements.  You can display other HTML too.</p>
     			<p><a href="http://blog.aaronvanderzwan.com/2011/11/maximage-2-0-beta1-release/" target="_blank" style="font-weight:bold">More info >></a></p>
-    		</div>
+    		</div>-->
     	</div>
     	
     	<img src="lib/images/demo/gas_station.jpg" alt="" />
@@ -589,7 +592,11 @@ $('#header').css({
 <div class="section sec-about" id="section1">
 
 	<div class="slide" id="slide1">
+
+
+	
 		<div class="intro" height=100% id="sec-about">
+
 			<h1 style="font-family:Lato;margin-bottom:5%">Team History </h1>
 			
 			<div id="aboutHistory">
@@ -607,10 +614,10 @@ $('#header').css({
 
 	<div class="slide" id="slide2">
 		<div class="intro" id="sec-about">
-
+			
 			<h1 style="font-family:Lato;margin-bottom:10px"> Dance Style</h1>
 
-			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:57.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas" style="position:absolute" height="200px" width="350px"/> </div>
+			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:57.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas"  height="200px" width="350px"/> </div>
 			<div id="garba" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:77.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/garba.jpg" alt="Raas" height="200px" width="350px"/> </div>
 			
 			<div id="danceStyle" style="margin-top:275px;margin-bottom:200px">
@@ -631,11 +638,12 @@ $('#header').css({
 				<br><br><br><br>
 				<div id="grid-gallery" class="grid-gallery">
 					<section class="grid-wrap">
-						<ul class="grid">
+						<ul class="grid ">
 							<li class="grid-sizer"></li><!-- for Masonry column width -->
 							<li>
 								<figure>
 									<img src="../images/team_thumbnail/141_01.jpg"  alt="img01"/>
+									
 									<figcaption><h3>Aatish <br> Nayak</h3></figcaption>
 								</figure>
 							</li>
@@ -777,7 +785,7 @@ $('#header').css({
 
 						</ul><br><br><br><br><br><br><br><br><br>
 					</section><!-- // grid-wrap -->
-					<section class="slideshow">
+					<section class="slideshow" id="slideshow">
 						<ul>
 							<li>
 								<figure>

@@ -276,10 +276,7 @@
 				$.fn.fullpage.setScrollingSpeed(prevScrollingSpeepd);
 			}
 
-			//fixed elements need to be moved out of the plugin container due to problems with CSS3.
-			if(options.fixedElements && options.css3){
-				$(options.fixedElements).appendTo('body');
-			}
+			
 
 			//vertical centered of the navigation + first bullet active
 			if(options.navigation){

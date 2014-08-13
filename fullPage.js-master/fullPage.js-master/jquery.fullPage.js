@@ -357,9 +357,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
 			}
 			
-			if (element.data('anchor')=="contact"){
-				dest.top=otherElem.position().top+winheight+winheight-50;
-			}
+
 			
 			dtop = dest != null ? dest.top : null;
 			

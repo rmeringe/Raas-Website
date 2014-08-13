@@ -328,13 +328,22 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
 	    	$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:winheight/2
+	    		setHeight:.72*winheight, 
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 	    	$("#grid-gallery").mCustomScrollbar({
-	    		setHeight:.9*winheight-40
+	    		setHeight:.85*winheight-40, 
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 	    	$("#aboutHistory").mCustomScrollbar({
-	    		setHeight:.70*winheight
+	    		setHeight:.80*winheight, 
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 
 
@@ -762,7 +771,7 @@ $('#costumeRental').on('click', function() {
 
 			destiny.addClass('active');}
 		});
-$('#contactForm').on('click', function() {
+$('#contactFormMenu').on('click', function() {
 			var slides = $("#section5").find('.slides');
 			var slidesContainer = slides.find('.slidesContainer').parent();
 			var currentSlide = slides.find('.slide.active');
@@ -874,13 +883,22 @@ $('#aboutHistory').mCustomScrollbar("destroy");
 			}
 			$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:windowsHeight/2
+	    		setHeight:windowsHeight*.72,
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 	    	$("#grid-gallery").mCustomScrollbar({
-	    		setHeight:.9*windowsHeight-40
+	    		setHeight:.85*windowsHeight-40,
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 	    	$("#aboutHistory").mCustomScrollbar({
-	    		setHeight:.70*windowsHeight
+	    		setHeight:.80*windowsHeight,
+	    		scrollButtons:{
+	    			enable:true
+	    		}
 	    	});
 
 				

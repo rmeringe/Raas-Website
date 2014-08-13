@@ -422,6 +422,9 @@ $('#header').css({
 
 </head>
 <body >
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="http://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+<div id="fb-root"></div>
+
 
 	<div id="header">
 		<div id='cssmenu'>
@@ -449,15 +452,15 @@ $('#header').css({
 						<li id="costumeRental"class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Costume Rental</span></a>
 
 						</li>
-						<li id="contactForm" class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Contact Us</span></a>
+						<li id="contactFormMenu" class='has-sub'><a href='#contact' style="font-family:'Lato'"><span>Contact Us</span></a>
 
 						</li>
 					</ul>
 
 				</li>
-				<a class="logos" style="position:absolute;right:10px"><img src="../images/icons/youtube.png" style="width:40px"></a>
-				<a class="logos" style="position:absolute;right:50px"><img src="../images/icons/twitter.png" style="width:40px"></a>
-				<a class="logos" style="position:absolute;right:90px"><img src="../images/icons/facebook.png" style="width:40px"></a>
+				<a class="logos" style="position:absolute;right:10px" href="http://www.youtube.com/user/cmuraasvideos" target="_blank"><img src="../images/icons/youtube.png" style="width:40px"></a>
+				<a class="logos" style="position:absolute;right:50px" href="http://www.twitter.com/cmuraasta" target="_blank"><img src="../images/icons/twitter.png" style="width:40px"></a>
+				<a class="logos" style="position:absolute;right:90px" href="http://www.facebook.com/cmuraasta" target="_blank"><img src="../images/icons/facebook.png" style="width:40px"></a>
 
 			</div>
 		</ul>
@@ -518,18 +521,9 @@ $('#header').css({
 				$(this).parent().addClass('open');
 			}
 		});
+
 	</script>
-<!--
 
-
-
-
-    <div id="right" style="position:absolute; float:left; top:5px; width:auto;right:10px; "><img src="../images/topper.fw.png" height="100%" ></div>
-    
-       
-
-</div>
--->
 <style>
 
 	#maximage {
@@ -541,7 +535,13 @@ $('#header').css({
 
 	}
 </style>
-<div id="footer"><p style="font-family:Lato; float:left;font-size:10px; left:10px;display:block; position:absolute; text-shadow: 0 1px 0 white"> &copy CMU RAASTA 2014 </p> <br> <p style="font-family:Lato; float:left;font-size:10px;left:10px;line-height:2px;display:block;position:absolute;">Designed and Developed by Rohan Meringenti </p></div>
+<div id="footer"><p style="font-family:Lato; float:left;font-size:10px; left:10px;display:block; position:absolute; text-shadow: 0 1px 0 white"> &copy CMU RAASTA 2014 </p> <br> <p style="font-family:Lato; float:left;font-size:10px;left:10px;line-height:2px;display:block;position:absolute;">Designed and Developed by Rohan Meringenti </p>
+
+<div id="twitter" style="position:absolute; right:10px;bottom:10px;height:21px;overflow:hidden"> <a href="https://twitter.com/cmuraasta" class="twitter-follow-button" data-show-count="false" data-lang="en">Follow @cmuraasta</a></div>
+
+<iframe src="http://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fcmuraasta&amp;width=50&amp;width=50&amp;layout=button_count&amp;action=like&amp;show_faces=true&amp;share=true&amp;height=21" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;position: absolute;
+right: 130px;
+bottom: 10px;" allowTransparency="true"></iframe></div>
 
 <div id="fullpage">
 	<div class="section sec-home" id="section0">
@@ -560,6 +560,7 @@ $('#header').css({
     <div id="maximage">
     	<div class="first-item">
     		<img src="images/about.jpg" alt="" />
+    		
     		<!--
     		<img id="gradient" src="lib/images/demo/gradient.png" alt="" />
     		<div class="in-slide-content">
@@ -592,8 +593,8 @@ $('#header').css({
 <div class="section sec-about" id="section1">
 
 	<div class="slide" id="slide1">
-
-
+<img id="dandiyas" src="dandiyasresting3.png" style="position:absolute;left:0;height:100%;opacity:.8"/>
+			
 	
 		<div class="intro" height=100% id="sec-about">
 
@@ -613,26 +614,29 @@ $('#header').css({
 	</div>
 
 	<div class="slide" id="slide2">
+
 		<div class="intro" id="sec-about">
 			
 			<h1 style="font-family:Lato;margin-bottom:10px"> Dance Style</h1>
 
-			<div id="raas" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:57.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/raas.jpg" alt="Raas"  height="200px" width="350px"/> </div>
-			<div id="garba" style="float:left;position:absolute;margin-top:20px;margin-bottom:20px;left:77.5%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"> <img src="../images/garba.jpg" alt="Raas" height="200px" width="350px"/> </div>
+			<div id="images" style="width:40%;float:left;display:table-cell;overflow:hidden">
+
+			 <img src="../images/raas.png" alt="Raas"  height="auto" width="70%" style="margin-bottom:10%;margin-top:5%;margin-left:10%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"/> 
+			 <img src="../images/garba.png" alt="Raas" height="auto" width="70%" style="margin-top:5%;margin-left:10%;margin-bottom:10%;border:2px solid white; box-shadow: 10px 10px 5px #888888;"/> </div>
 			
-			<div id="danceStyle" style="margin-top:275px;margin-bottom:200px">
-				<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br>
-				<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">
+			<div id="danceStyle" style="float:right;width:60%;margin-top:2%">
+				<p   id="asdf" data-speed="1.5" data-t="0" data-b="80" style="width:85%;z-index:5;color:white;font-family:Lato;line-height:1.7">Garba-Raas originates from the Hindu festival Navratri. The word Navratri literally means nine nights in Sanskrit, nava meaning nine and ratri meaning nights. The Navratri festival in Gujarat is one of the main festivals in which people dance in large groups after the Durga Pooja to a live orchestra and devotional songs.</p><br><br>
+				<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="width:85%;z-index:5;color:white;font-family:Lato;line-height:1.7">
 					The Garba-Raas dance style has formed through the joining of two distinct styles: <a href="http://en.wikipedia.org/wiki/Garba_(dance)">Garba </a>(based on circular dancing) and <a href="http://en.wikipedia.org/wiki/Dandiya_Raas">Raas </a>(where sticks, dandiya, are twirled). Raas and Garba are typical Gujarati folk dances that are energetic and involve whirling and moving their feet and arms in a complicated, choreographed manner.</p><br><br>
-					<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br>
-					<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="../contact/contact.html"> Contact us </a>.</p> <br><br><br></div>
+					<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="width:85%;z-index:5;color:white;font-family:Lato;line-height:1.7"> Garba-raas music is typically very dynamic, involving various voices and percussion instruments to create various rhythms. At the competitive level, Garba-Raas teams will create mixes that are blends of western and traditional Gujurati music to match their spirited choreography, formations, and props.</p><br><br>
+					<p  id="asdf" data-speed="1.5" data-t="0" data-b="80" style="width:85%;z-index:5;color:white;font-family:Lato;line-height:1.7">While dancing Garba-Raas, women wear chaniya cholis, colorful skirts and blouses often with hand embroidery and embedded mirrors and shells. Women also often wear traditional Gujurati silver jewelry. Men wear kediyus, long tops that usually match the colorful flavors of the women’s skirts, and dhotyus, similar pants to <a href="http://en.wikipedia.org/wiki/Dhoti"> dhotis</a>. If you are interested in renting our costumes, please <a href="#contact"> Contact us </a>.</p> <br><br><br></div>
 
 				</div>
 
 			</div>
 		</div>
 		<div class="section sec-ourteam" id="section2">
-
+			
 			<div  class="intro" id="sec-ourteam" style="margin-top:2%;margin-bottom:10%;">
 
 				<br><br><br><br>
@@ -1441,10 +1445,10 @@ $('#header').css({
 				<div class="intro" id="sec-donate">
 					<img  id="donateText" src="../images/donationsText.png" style="width:auto; height:30%;position:absolute;display:block;top:65px;margin:auto; margin-bottom:100px;left:0;right:0">
 
-					<img class="plx" id="donatesilver" src="../images/Optimized-silver.jpg" data-speed="1.0" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:-550px;margin-top:50px">
-					<img class="plx"id="donategold" src="../images/Optimized-gold.jpg" data-speed="1.2" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:-150px;margin-top:50px">
-					<img class="plx" id="donateplatinum" src="../images/Optimized-platinum.jpg" data-speed="1.4" data-t="20" data-b="40" data-n="80"style="width:300px; position:absolute;;top:40%;margin-left:250px;margin-top:50px">
-					<!--img class="plx" data-speed="1.0" data-t="20" data-b="50" data-n="80" id="donationimg" src="../images/Donations5.png" width="100%" style="position:absolute;margin-left:auto;margin-right:auto;width:100%">-->
+					<img class="plx" id="donatesilver" src="../images/Optimized-silver.jpg" data-speed="1.0" data-t="20" data-b="40" data-n="80"style="height:50%; width:auto; position:absolute;;top:40%;margin-left:-550px;margin-top:50px">
+					<img class="plx"id="donategold" src="../images/Optimized-gold.jpg" data-speed="1.2" data-t="20" data-b="40" data-n="80"style="height:50%; width:auto; position:absolute;;top:40%;margin-left:-150px;margin-top:50px">
+					<img class="plx" id="donateplatinum" src="../images/Optimized-platinum.jpg" data-speed="1.4" data-t="20" data-b="40" data-n="80"style="height:50%; width:auto;  position:absolute;;top:40%;margin-left:250px;margin-top:50px">
+					
 				</div>
 			</div>
 			<div class="section sec-contact" id="section5">

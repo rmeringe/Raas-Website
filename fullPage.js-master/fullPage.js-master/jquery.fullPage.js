@@ -326,6 +326,8 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 			var danceStyle=$("#danceStyleHead").height();
 			var header=$("#header").height();
 			var footer=$("#footer").height();
+			var footerTop=$("#footer").position().top;
+			var danceTop=$("#danceStyle").position().top;
 
 	    	console.log("winheight",winheight);
 	    	console.log("danceStyle",danceStyle);
@@ -336,7 +338,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
 	    	$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:winheight-10-footer-(.15*slide2)-danceStyle, 
+	    		setHeight:footerTop-danceTop-30, 
 	    		scrollButtons:{
 	    			enable:true
 	    		}
@@ -898,6 +900,8 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 			var footer=$("#footer").height();
 			var winheight=$(window).height();
 			var winwidth=$(window).width();
+			var footerTop=$("#footer").position().top;
+			var danceTop=$("#danceStyle").position().top;
 
 			$(".header #logo, #btnHomeLogo").css({margin: margins});
 			
@@ -909,7 +913,7 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 
 			$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:winheight-10-footer-(.15*slide2)-danceStyle, 
+	    		setHeight:footerTop-danceTop-30,
 	    		scrollButtons:{
 	    			enable:true
 	    		}

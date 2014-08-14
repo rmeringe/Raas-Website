@@ -152,7 +152,6 @@
 	};
 
 	CBPGridGallery.prototype._openSlideshow = function( pos ) {
-		
 		this.isSlideshowVisible = true;
 		console.log("Open slideshow called",pos)
 		this.current = pos;
@@ -290,7 +289,6 @@
 	}
 
 	CBPGridGallery.prototype._closeSlideshow = function( pos ) {
-		$("#fullPage-nav").fadeIn();
 		// remove class slideshow-open from the grid gallery elem
 		classie.removeClass( this.el, 'slideshow-open' );
 		// remove class animatable from the slideshow grid
@@ -356,7 +354,7 @@
 		if ( this._resizeTimeout ) {
 			clearTimeout( this._resizeTimeout );
 		}
-		this._resizeTimeout = setTimeout( delayed, 200);
+		this._resizeTimeout = setTimeout( delayed, 400);
 
 	}
 

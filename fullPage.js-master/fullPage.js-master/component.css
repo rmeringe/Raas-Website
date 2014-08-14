@@ -60,7 +60,7 @@
 
 /* Grid style */
 .grid-wrap {
-	max-width: 69em;
+	max-width: 100vw;
 	margin: 0 auto;
 	padding: 0 1em 1.875em;
 }
@@ -85,7 +85,7 @@
 }
 
 .grid li:hover img {
-	
+	border-radius:20px;
      filter: grayscale(0%);
     -webkit-filter: grayscale(0%);
     -moz-filter: grayscale(0%);

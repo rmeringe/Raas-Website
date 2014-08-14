@@ -328,6 +328,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 			var footer=$("#footer").height();
 			var footerTop=$("#footer").position().top;
 			var danceTop=$("#danceStyle").position().top;
+			var teamHistoryTop=$("#aboutHistory").position().top;
 
 	    	console.log("winheight",winheight);
 	    	console.log("danceStyle",danceStyle);
@@ -338,7 +339,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 
 	    	$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:footerTop-danceTop-30, 
+	    		setHeight:footerTop-danceTop-30-(.05*slide2), 
 	    		scrollButtons:{
 	    			enable:true
 	    		}
@@ -350,11 +351,24 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 	    		}
 	    	});
 	    	$("#aboutHistory").mCustomScrollbar({
-	    		setHeight:.80*winheight, 
+	    		setHeight:footerTop-teamHistoryTop-30, 
 	    		scrollButtons:{
 	    			enable:true
 	    		}
 	    	});
+	    	
+
+	    	$(".mCSB_scrolltools_horizontal").css({bottom:0});
+	    	$( ".mCSB_horizontal > .mCSB_container" ).draggable({axis:"x", 
+	    		stop: function(){
+	    		var newPosition=$(".mCSB_horizontal > .mCSB_container").position().left;
+	    		if (newPosition>0){
+	    			newPosition=0;
+	    		}
+	    		$("#sec-gallery").mCustomScrollbar("scrollTo",newPosition);
+	    			}
+	    		});
+
 	    	$("#sec-gallery").mCustomScrollbar({
 	    		
 	    		setHeight:winheight-header-footer-(.05*slide2),
@@ -368,7 +382,9 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 	    		},
 	    		axis:"x"
 	    	});
-	    	$("#mCSB_4_scrollbar_horizontal").css({bottom:0});
+
+	    	
+	    	
 
 			dest = element.position();
 
@@ -902,6 +918,7 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 			var winwidth=$(window).width();
 			var footerTop=$("#footer").position().top;
 			var danceTop=$("#danceStyle").position().top;
+			var teamHistoryTop=$("#aboutHistory").position().top;
 
 			$(".header #logo, #btnHomeLogo").css({margin: margins});
 			
@@ -913,7 +930,7 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 
 			$("#danceStyle").mCustomScrollbar({
 
-	    		setHeight:footerTop-danceTop-30,
+	    		setHeight:footerTop-danceTop-30-(.05*slide2),
 	    		scrollButtons:{
 	    			enable:true
 	    		}
@@ -925,11 +942,23 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 	    		}
 	    	});
 	    	$("#aboutHistory").mCustomScrollbar({
-	    		setHeight:.80*winheight, 
+	    		setHeight:footerTop-teamHistoryTop-30, 
 	    		scrollButtons:{
 	    			enable:true
 	    		}
 	    	});
+	    	
+	    	$(".mCSB_scrolltools_horizontal").css({bottom:0});
+	    	$( ".mCSB_horizontal > .mCSB_container" ).draggable({axis:"x", 
+	    		stop: function(){
+	    		var newPosition=$(".mCSB_horizontal > .mCSB_container").position().left;
+	    		if (newPosition>0){
+	    			newPosition=0;
+	    		}
+	    		$("#sec-gallery").mCustomScrollbar("scrollTo",newPosition);
+	    			}
+	    		});
+
 	    	$("#sec-gallery").mCustomScrollbar({
 	    		
 	    		setHeight:winheight-header-footer-(.05*slide2),
@@ -943,7 +972,6 @@ $('#sec-gallery').mCustomScrollbar("destroy");
 	    		},
 	    		axis:"x"
 	    	});
-	    	$("#mCSB_4_scrollbar_horizontal").css({bottom:0});
 
 				
 			$('.section').each(function(){

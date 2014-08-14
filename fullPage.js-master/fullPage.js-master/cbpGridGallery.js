@@ -152,6 +152,7 @@
 	};
 
 	CBPGridGallery.prototype._openSlideshow = function( pos ) {
+		
 		this.isSlideshowVisible = true;
 		console.log("Open slideshow called",pos)
 		this.current = pos;
@@ -179,6 +180,7 @@
 			var translateVal = Number( getViewportW() / 2 + this.nextItem.offsetWidth / 2 );
 			setTransform( this.nextItem, support.support3d ? 'translate3d(' + translateVal + 'px, 0, -150px)' : 'translate(' + translateVal + 'px)' );
 		}
+		$("#fullPage-nav").fadeOut();
 	};
 
 	CBPGridGallery.prototype._navigate = function( dir ) {
@@ -288,6 +290,7 @@
 	}
 
 	CBPGridGallery.prototype._closeSlideshow = function( pos ) {
+		$("#fullPage-nav").fadeIn();
 		// remove class slideshow-open from the grid gallery elem
 		classie.removeClass( this.el, 'slideshow-open' );
 		// remove class animatable from the slideshow grid
@@ -322,6 +325,7 @@
 		else {
 			onEndTransitionFn();
 		}
+		$("#fullPage-nav").fadeIn();
 	};
 
 	CBPGridGallery.prototype._setViewportItems = function() {

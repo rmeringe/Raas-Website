@@ -110,10 +110,13 @@ p.subline{
 .block{
 	float:left;
 	margin:5px;
-	background:#fff;
+	background:rgba(255,255,255,.3);
 	padding:20px;
 	width:260px;
 	text-align:left;
+}
+.block:hover{
+	opacity:.8;
 }
 .block-small{
 	width:160px;
@@ -156,11 +159,12 @@ font-size: 12px;
 	display:none;
 }
 .project-descr-full{
-	background:#fff;
-	height:186px;
+	background:rgba(0,0,0,.6);
+	height:100px;
+	font-family:Lato;
 	padding:0;
 	position:fixed;
-	top:50%;
+	bottom:0%;
 	width:100%;
 	opacity:0.9;
 	left:0px;

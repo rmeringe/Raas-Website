@@ -322,7 +322,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 			}else{
 				location.hash = '';
 			}
-			var slide2=$("#slide2").height();
+			var slide2=$("#sec-about").height();
 			var danceStyle=$("#danceStyleHead").height();
 			var header=$("#header").height();
 			var footer=$("#footer").height();
@@ -356,7 +356,7 @@ var isIE = /*@cc_on!@*/false || !!document.documentMode; // At least IE6
 	    	$("#sec-gallery").mCustomScrollbar({
 	    		
 	    		setHeight:winheight-header-footer-(.05*slide2),
-	    		setWidth:1600,
+	    		setWidth:winWidth,
 	    		
 	    		mousewheel:{
 	    			axis:"x"
@@ -875,6 +875,7 @@ $('#contactFormMenu').on('click', function() {
 			$('#danceStyle').mCustomScrollbar("destroy");
 $('#grid-gallery').mCustomScrollbar("destroy");
 $('#aboutHistory').mCustomScrollbar("destroy");
+$('#sec-gallery').mCustomScrollbar("destroy");
 		  doneResizing();
 		  setTimeout(doneResizing,100);
 		});
@@ -891,11 +892,12 @@ $('#aboutHistory').mCustomScrollbar("destroy");
 			}else if(windowsHeight <= 700){
 				var margins = "0px auto 40px auto";
 			}
-			var slide2=$("#slide2").height();
+			var slide2=$("#sec-about").height();
 			var danceStyle=$("#danceStyleHead").height();
 			var header=$("#header").height();
 			var footer=$("#footer").height();
 			var winheight=$(window).height();
+			var winwidth=$(window).width();
 
 			$(".header #logo, #btnHomeLogo").css({margin: margins});
 			
@@ -926,8 +928,8 @@ $('#aboutHistory').mCustomScrollbar("destroy");
 	    	});
 	    	$("#sec-gallery").mCustomScrollbar({
 	    		
-	    		setHeight:winheight-header-footer-(.02*slide2),
-	    		setWidth:1600,
+	    		setHeight:winheight-header-footer-(.05*slide2),
+	    		setWidth:winwidth,
 	    		
 	    		mousewheel:{
 	    			axis:"x"
@@ -935,8 +937,7 @@ $('#aboutHistory').mCustomScrollbar("destroy");
 	    		scrollButtons:{
 	    			enable:true
 	    		},
-	    		axis:"x",
-	    		scrollbarPosition:"outside"
+	    		axis:"x"
 	    	});
 	    	$("#mCSB_4_scrollbar_horizontal").css({bottom:0});
 
